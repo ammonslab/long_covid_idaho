@@ -44,7 +44,10 @@ filter <- dplyr::filter
 my_theme <- function(base_size = 12, base_family = "") {
   theme_classic(base_size = base_size, base_family = base_family) %+replace%
     theme(
-      panel.grid.major = element_line(linewidth = 0.1),
+      panel.grid.major = element_line(
+        color = "gray50",
+        linewidth = 0.01
+      ),
       strip.background = element_blank()
     )
 }
