@@ -1,0 +1,801 @@
+---
+title: A retrospective cohort study of viral and sociodemographic determinants of long COVID among Idaho veterans
+authors:
+  - name: Ian Taylor
+    affiliations:
+      - ref: bvamc
+  - name: Jeremy K. Boyd
+    affiliations:
+      - ref: bvamc
+      - ref: ivref
+  - name: Eric McIndoo
+    affiliations:
+      - ref: bvamc
+      - ref: ivref
+  - name: Mary Cloud B. Ammons
+    affiliations:
+      - ref: bvamc
+      - ref: ivref
+affiliations:
+  - id: bvamc
+    name: Boise Veterans Affairs Medical Center, Boise, Idaho
+    city: Boise
+    state: Idaho
+    country: USA
+  - id: ivref
+    name: Idaho Veterans Research and Education Foundation, Boise, Idaho
+    city: Boise
+    state: Idaho
+    country: USA
+date: now
+date-format: long
+filters:
+  - authors-block
+format:
+  docx:
+    number-sections: false
+    reference-doc: Frontiers_Template.docx
+  pdf:
+    keep-tex: true
+bibliography: references.json
+csl: frontiers-medical-journals.csl
+echo: false
+error: false
+warning: false
+message: false
+editor_options: 
+  chunk_output_type: console
+keywords:
+  - long COVID
+  - viral genetics
+  - rural health
+  - veteran health
+copyright: The authors, 2025. All rights reserved.   
+---
+
+**\* Correspondence:**
+
+Mary Cloud B. Ammons (marycloud.ammonsanderson\@va.gov)
+
+**Keywords: Long COVID, viral genetics, rural health, veteran health**
+
+```{r}
+#| label: read_data
+
+# Load packages
+library(tidyverse)
+library(odbc)             # Connect to db
+library(DBI)              # Work with db
+library(marginaleffects)  # Summarize model results
+library(lubridate)
+library(gt)
+library(consort)
+library(feather)
+library(nnet)             # Multinomial models
+library(ggokabeito)
+library(gtsummary)
+library(flextable)
+library(ggraph)
+library(patchwork)        # Needed to align plots in a panel figure
+library(here)             # Knit from directories other than project
+
+# Resolve conflicts
+select <- dplyr::select
+filter <- dplyr::filter
+
+# Custom ggplot theme
+my_theme <- function(base_size = 12, base_family = "") {
+  theme_classic(base_size = base_size, base_family = base_family) %+replace%
+    theme(
+       panel.grid.major = element_line(linewidth = 0.1),
+       strip.background = element_blank()
+    )
+}
+theme_set(my_theme())
+
+# Set up here
+here::i_am("manuscript.qmd")
+
+# Data from CDW
+data <- read_feather(here("data/cdw_data.feather"))
+
+# Data with exclusions
+data_excl <- read_feather(here("data/data_excl.feather"))
+
+# Model data
+data_mod <- read_feather(here("data/data_mod.feather"))
+
+# Extract study start/stop dates
+study_dates <- 
+  tibble(type = c("min", "max"),
+         date = c(min(data_excl$LabSpecimenTakenDateTime, na.rm = TRUE),
+                  max(data_excl$LabSpecimenTakenDateTime, na.rm = TRUE))) |>
+  mutate(date = format(date, "%B %d, %Y"),
+         date = str_replace(date, " 02, ", " 2, "))
+
+# Read in age scaling variables
+age_scale <- read_rds(here("data/age_scale.rds"))
+age_mean <- age_scale$age_mean
+age_sd <- age_scale$age_mean
+
+# Read in adjusted risk differences
+rd <- read_rds(here("data/rd.rds"))
+
+# Read in predictions
+clade_pred <- read_feather(here("data/clade_pred.feather"))
+sex_pred <- read_feather(here("data/sex_pred.feather"))
+age_pred <- read_feather(here("data/age_pred.feather"))
+rural_pred <- read_feather(here("data/rural_pred.feather"))
+svi_pred <- read_feather(here("data/svi_pred.feather"))
+
+# Percent white and non-Hispanic in final cohort end up being the same (percent_unique).
+percent_nonwhite <- data_mod |>
+  summarize(percent_nonwhite = sum(race == "Non-White") / n() * 100) |>
+  pull(percent_nonwhite) |>
+  round(digits = 0)
+percent_hisp <- data_mod |>
+  summarize(percent_hisp = sum(ethnicity == "Hispanic Or Latino") / n() * 100) |>
+  pull(percent_hisp) |>
+  round(digits = 0)
+percent_unique <- unique(percent_nonwhite, percent_hisp)
+
+# Percent male in final cohort
+percent_male <- data_mod |>
+  mutate(percent_m = if_else(sex == "M", 100, 0L)) |>
+  pull(percent_m) |>
+  mean() |>
+  round(digits = 1)
+
+# Mean age in final cohort. Use data_excl here because that has age in years
+# before being standardized.
+mean_age <- data_excl |>
+  filter(is.na(exclusion)) |>
+  pull(age) |>
+  mean() |>
+  round(digits = 1)
+
+# Get diagnostic ICD-10 codes
+icd10 <- read_feather(here("data/icd10.feather"))
+
+```
+
+**Abstract**
+
+**Purpose**: To investigate associations between cardiopulmonary, neuropsychiatric, and multisystem long COVID phenotypes, and sequence-defined SARS-CoV-2 viral variant and sociodemographic predictors in a population from a rural state.
+
+**Methods**: SARS-CoV-2 clinical samples were collected from `r nrow(data_mod) |> format(big.mark = ",")` veterans treated at the Veterans Affairs (VA) Medical Center in Boise, Idaho from `r study_dates |> filter(type == "min") |> pull(date)` to `r study_dates |> filter(type == "max") |> pull(date)`. Viral variants were identified through sequencing and annotated with clinical data from the VA Corporate Data Warehouse, as well as CDC rurality and social vulnerability. Cardiopulmonary, neuropsychiatric, and multisystem long COVID phenotypes were determined by the addition of one or more ICD-10 codes 90-270 days post-infection. Multinomial logistic regression was used to estimate phenotype prevalence in a base model with predictors viral variant, age, sex, rurality, and social vulnerability, as well as in models that adjusted for patient health (comorbidity, healthcare utilization, and smoking status), and treatments (vaccination and Paxlovid).
+
+**Findings**: Female patients experienced more neuropsychiatric long COVID and less recovery, whereas the neuropsychiatric phenotype was less prevalent among older patients. Omicron variants had less recovery and more multisystem long COVID relative to pre-Delta---a finding that may indicate an association between infection with Omicron and post-acute gastrointestinal symptoms.
+
+**Conclusions**: This study is perhaps the largest to investigate viral variant effects on long COVID using sequence rather than date-based variant definitions, and is also unique in its focus on a population living in one of the most rural states in the United States. Our results are consistent with other studies finding contributions from both biological and social predictors to long COVID outcomes.
+
+# Introduction
+
+Although the COVID-19 national emergency ended in May 2023 [@FEMAcovid2024], COVID-19 continues to have a significant impact on many Americans, with an array of symptoms either emerging or lingering after initial SARS-CoV-2 infection. This continued set of symptoms is known as post-acute sequelae of COVID-19 (PASC), or long COVID. The Centers for Disease Control and Prevention (CDC) estimates that nearly 7% of adults in the United States are affected by some form of long COVID [@ford2024], with larger numbers affected depending on the infecting viral variant, patient demographic characteristics, pre-existing conditions, and severity of the acute phase of the SARS-CoV-2 infection [@mata2023; @al-aly2024].
+
+## Viral variants and long COVID outcomes
+
+Emerging evidence suggests that the SARS-CoV-2 variant responsible for infection influences long COVID risk. In general, infections with pre-Delta and Delta variants have been associated with a higher likelihood of long COVID compared with Omicron infections. Meta-analyses [@hou2025] and large cohort studies [@xie2024] show that the odds of developing long COVID have declined across successive variants, with Omicron infections producing fewer post-acute sequelae than earlier strains. This trend likely reflects both biological differences between variants and the cumulative effects of increasing immunity through vaccination and prior infection. Taken together, the infecting viral variant represents a key contextual factor for long COVID risk, with earlier variants carrying greater long-term morbidity.
+
+## Sociodemographic predictors of long COVID
+
+Several sociodemographic characteristics have consistently emerged as predictors of long COVID. Age is positively associated with long COVID prevalence [@tsampasian2023], and sex differences are robust, with women showing increased odds of long COVID across multiple countries and study designs [@perlis2022; @hou2025; @tsampasian2023]. Geographic and social contexts also matter. Rural residents have shown higher long COVID prevalence than urban residents [@maccallum-bridges2024; @shi2025], likely reflecting disparities in healthcare access, comorbidities, and delayed care [@mueller2021]. Similarly, individuals from communities with higher Social Vulnerability Index (SVI) scores---indicating greater socioeconomic disadvantage---have been reported to experience more long COVID [@ryu2025; @fakhraei2025]. These findings underscore that long COVID risk reflects not only viral and biological factors, but also social and structural determinants of health.
+
+## The present study
+
+Despite the growing literature on long COVID, there are critical gaps in our understanding of how viral variants and patient factors intersect, especially in certain populations and settings. Notably, few prior studies have examined long COVID outcomes across multiple genetically confirmed variant types in a predominantly rural setting.
+
+Variant definition across most studies has been date-based: researchers assume that COVID cases are caused by whatever variant happens to be most common on the date they were diagnosed [@xie2024; @perlis2022]. While date-based methods are simple to implement, their focus on the most frequent variants in a country or region makes it impossible to discover symptom patterns that may be attributable to less frequent variants. This limitation can have a particularly strong impact in rural regions, where small population sizes make it entirely possible that SARS-CoV-2 variants that are highly frequent locally but not nationally will consistently be incorrectly labeled.
+
+Most long COVID work has also focused on urban or nationwide samples. In contrast, Idaho---one of the least population-dense states in the United States [@censuspop2021]---provides an opportunity to investigate long COVID in an underrepresented rural context. Moreover, the population of interest here is U.S. military veterans, who have distinct demographics and health characteristics. The veteran cohort tends to be older, predominantly male, and less healthy [@pietrzak2021; @betancourt2021]. In sum, to our knowledge, no published studies have specifically focused on long COVID in a veteran cohort within a rural state like Idaho, while also accounting for the infecting viral variant via genomic sequencing.
+
+We aim to fill this gap by leveraging sequence and clinical data collected at the Boise VA Medical Center (BVAMC) in Boise, Idaho to model the prevalence of long COVID based on sequence-determined viral variant, age, sex, rurality, and community SVI within a veteran cohort. Our results will contribute to knowledge of the long-term impacts of COVID-19 in this understudied segment of the population.
+
+# Methods
+
+## Initial cohort
+
+The initial study cohort consisted of `r nrow(data_excl) |> format(big.mark = ",")` patients with sequenced SARS-CoV-2 samples collected between `r study_dates |> filter(type == "min") |> pull(date)` and `r study_dates |> filter(type == "max") |> pull(date)` at the BVAMC. Samples were obtained through the VA SHIELD (Science and Health Initiative to Combat Infectious and Emerging Life-Threatening Diseases) biorepository [@harley2022; @krishnan2023; @epstein2023]. Sequencing methods are reported in the supplementary materials. Clinical data for all patients were extracted from the VA CDW (Corporate Data Warehouse) [@VACDW2023]. Rurality and social vulnerability were based on CDC measures summarized at the county level [@NCHS2013; @cdcsvi2022], and were joined to the CDW data on patients’ county of residence. Additionally, viral clade for each sample was obtained by submitting all sequences to Nextclade [@aksamentov2021].
+
+## Outcome definition {#sec-outcome}
+
+The literature was reviewed for ICD-10 codes reflecting cardiopulmonary, neuropsychiatric, and gastrointestinal long COVID symptoms [@bogariu2022; @astin2023; @chan2022; @efstathiou2022; @gottlieb2023; @jones2021; @lorente-ros2023; @negro2022; @pfaff2023; @pungitore2024; @sherif2023; @subramanian2022; @thaweethai2023; @turner2023; @wang2022; @xie2022; @zhang2023; @zanini2024]. This identified the `r nrow(icd10)` codes given in Supplementary @tbl-icd. All instances of the Supplementary @tbl-icd codes in two time windows were extracted from patients' medical records. The *pre* window consisted of the two years prior to index, which was the date on which COVID-19 was diagnosed; the *post* window was 90-270 days after index.
+
+Patients were labeled as having either *cardiopulmonary*, *neuropsychiatric*, or *gastrointestinal* long COVID phenotypes if they had one or more new codes exclusive to a system, where "new" refers to codes that did not occur in the pre window, but did occur in the post window. For example, if a patient had two new cardiopulmonary codes and no new neuropsychiatric or gastrointestinal codes, then they were labeled as having cardiopulmonary long COVID. Additionally, if patients had new codes implicating more than one system, they were labeled as having *multisystem* long COVID. Patients with no new codes were labeled *recovered*, indicating that they recovered from their acute COVID-19 case with no long-lasting symptoms.
+
+## Predictor variables
+
+Target predictor variables were viral variant, age, sex, rurality, and SVI [@cdcsvi2022]. Additional sensitivity controls were variables representing patient health (comorbidity, smoker status, and health care utilization), and COVID-19 treatments (vaccination and Paxlovid).
+
+Because our dataset is comprised of cases numbering in the low thousands---compared to tens or even hundreds of thousands of cases in urban-centric studies [@xie2024]---care was taken to ensure that enough data existed to accurately estimate model parameters. Accordingly, a number of variables underwent categorization to maximize the amount of data per parameter. Clades were grouped based on genetic relatedness into four viral variants: *pre-Delta* (20A, 20B, 20C, 20G, 20I, 20J, 21C, and 21H), *Delta* (21A, 21I, and 21J), *early Omicron* (21M, 21K, and 21L), and *Omicron 2022+* (22A, 22B, 22C, 22D, 22E, and 22F). Rurality was revised into *high* (small metros, micropolitans, and non-core areas) and *low* (large and medium metros) groups. Examination of SVI scores revealed a bimodal distribution with a natural break at 0.35; patients with scores above 0.35 were categorized as *high* SVI, while all others were *low*. Comorbidity was a binary variable based on Charlson comorbidities [@charlson1987] computed over the two-years prior to index: patients with one or more comorbidities were labeled *yes*; those with no comorbidities were labeled *no*. Smoker status was divided into two groups: *current and former* and *non-smoker*. The number of COVID-19 vaccinations prior to index was coded as *less than two* versus *greater than or equal to two*. Treatment with Paxlovid was coded *yes* for patients receiving Paxlovid within seven days of index, and *no* otherwise. And health care utilization was defined as the number of days in which the patient had an outpatient visit or were hospitalized over the two-year period from 2018-2019, prior to the onset of the COVID-19 pandemic.
+
+## Final cohort
+
+The cohort was narrowed to `r data_excl |> filter(is.na(exclusion)) |> nrow() |>format(big.mark = ",")` analyzable cases after excluding `r data_excl |> filter(!is.na(exclusion)) |> nrow() |>format(big.mark = ",")`, as summarized in @fig-consort. Most exclusions were related to patients receiving the bulk of their care outside of the VA. This was an issue because during the time period that study data were being collected, the BVAMC sequenced tens of thousands of SARS-CoV-2 samples from community members who were not regular VA patients. These individuals had sparse records in the CDW, which made it impossible to define key study variables, including whether they had long COVID. Community members were identified and excluded based on the lack of an index date near the date their sequenced sample was collected, or having no record of COVID positivity at all. These gaps are expected for patients who do not receive healthcare primarily through the VA. Likewise, non-veteran and veteran-employees were excluded because they typically receive their care in the private sector. Other reasons for exclusion included missing predictor values, death within 270 days of index, and being labeled as having the gastrointestinal phenotype. Note that while there were not enough gastrointestinal cases to be confident in the model's ability to estimate the prevalence of gastrointestinal long COVID, gastrointestinal ICD-10 codes were still used to define the multisystem phenotype, as described in @sec-outcome. Finally, eight cases were excluded because their associated viral sequences failed Nextclade quality controls.
+
+```{r}
+#| label: fig-consort
+#| fig-cap: !expr paste0(data_excl |> filter(!is.na(exclusion)) |> nrow() |> format(big.mark = ","), " patients were excluded from the original cohort of ", nrow(data_excl) |> format(big.mark = ","), ", leaving ", data_excl |> filter(is.na(exclusion)) |> nrow() |> format(big.mark = ","), " analyzable cases.")
+
+# Consort diagram
+consort_fig <- consort_plot(
+  data = data_excl |>
+    mutate(exclusion = fct_relevel(
+      exclusion, "No nearby index date", "Non-veteran or veteran employee",
+      "No record of COVID positivity", "Missing predictor values",
+      "Died within 270 days")),
+  orders = c(patient = paste0(
+    "Patients with a sequenced SARS-CoV-2 sample\nfrom ",
+    study_dates |> filter(type == "min") |> pull(date), "-",
+    study_dates |> filter(type == "max") |> pull(date)),
+    exclusion = "Excluded",
+    patient = "Cases analyzed"),
+  side_box = c("exclusion"))
+
+# Write to file & insert into word doc
+# NOTE: This is printing "svg 2" to word doc. Fix.
+tiff(here("figures/consort_fig.tiff"), width = 5, height = 3, units = "in", res = 600)
+print(consort_fig)
+out <- dev.off()
+knitr::include_graphics(here("figures/consort_fig.tiff"))
+
+```
+
+The final cohort was predominantly older (*M* = `r mean_age` years) and male (`r percent_male`%), with only small numbers of patients identifying as non-white or Hispanic---just `r percent_unique`% for both. This precluded using either race or ethnicity as model predictors. Predictors that were used for modeling are summarized in @tbl-table1. @fig-symptoms gives the symptoms experienced by patients in the final cohort according to their long COVID phenotype label: cardiopulmonary, neuropsychiatric, or multisystem.
+
+```{r}
+#| label: tbl-table1
+#| tbl-cap: Model predictors by long COVID outcomes. Outcomes in each categorical row sum to the values in the Overall column.
+
+# Table 1
+# We're not modeling race & ethnicity because < 6% of the cohort are non-white or hispanic
+data_excl |>
+  filter(is.na(exclusion)) |>
+  mutate(
+    across(where(is.factor), ~ fct_drop(.x)),
+    clade = fct_relevel(clade, "Pre-Delta", "Delta", "Early Omicron"),
+    outcome = fct_relevel(
+      outcome, "Cardiopulmonary", "Neuropsychiatric", "Multisystem")) |>
+  tbl_summary(
+    include = c(
+      outcome, clade, age, sex, rurality, svi, comorbidity, smoking,
+      contact_days, vax, paxlovid),
+    
+    # Force table to show both levels of yes/no variables
+    type = list(
+      comorbidity ~ "categorical",
+      smoking ~ "categorical",
+      paxlovid ~ "categorical"),
+    label = list(
+      outcome = "Outcome",
+      clade = "Variant",
+      sex = "Sex",
+      rurality = "Rurality",
+      svi = "SVI",
+      age = "Age (years)",
+      comorbidity = "Comorbidity",
+      smoking = "Smoking",
+      paxlovid = "Paxlovid",
+      vax = "Vaccination (doses)",
+      contact_days = "Utilization (days)"),
+    by = outcome,
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = list(all_continuous() ~ 1),
+    percent = "row") |>
+  add_overall() |>
+  modify_header(label = "**Predictor**") |>
+  modify_spanning_header(stat_1:stat_4 ~ "**Outcome**") |>
+
+  # Convert gtsummary object to flextable in order to fit page in Word
+  as_flex_table() |>
+  font(fontname = "Times New Roman", part = "all") |>
+  fontsize(size = 10, part = "all") |>
+  set_table_properties(layout = "autofit")
+
+```
+
+```{r}
+#| label: fig-symptoms
+#| fig-cap: Symptoms experienced by patients with different long COVID phenotypes. Multisystem symptoms are based on cardipulmonary, neuropsychiatric, and gastrointestinal ICD-10 codes.
+
+# Table is one row per patient per unique study ICD-10 code that's new in the post window. Table includes patients with and without long covid.
+new_icd <- read_feather(here("data/new_icd.feather"))
+
+# All long covid cases used in analysis
+lc_cases <- data_excl |>
+  filter(is.na(exclusion),
+         outcome != "Recovered") |>
+  select(patient, index_date, phenotype = outcome) |>
+  mutate(phenotype = as.character(phenotype))
+
+# Table of study ICD10 metadata, including long covid phenotype and symptom cluster.
+meta <- read_csv(here("data/phenotype_symptoms_codes.csv"))
+
+# Table is all unique ICD10 codes used to diagnose each patient as having a form of long covid. One row per long covid patient per code. The left join to codes that are new in the post window means that we drop codes associated with patients who don't have a form of long covid. The inner join to metadata by code and phenotype means that we drop new codes that a long covid patient has that don't match their diagnosed form of long covid. For example, they might have 2 new cardio codes in the post window (so cardio long covid diagnosis), but also a single digestive code. The single digestive code gets dropped. 
+
+# Join every case to new ICD-10 codes for that case in the post window
+lc_symptoms <- lc_cases |>
+  left_join(new_icd, by = c("patient", "index_date"))
+
+# Multisystem symptoms. Cases labeled with multisystem long covid can have symptoms from any system: cardio, neuro, dig.
+multi_symp <- lc_symptoms |>
+  filter(phenotype == "Multisystem") |>
+  inner_join(
+    meta |>
+      select(symptom, ICD10Code),
+    by = "ICD10Code")
+
+# Cardio & neuro symptoms. Cases labeled with cardio or neuro long covid can only have cardio or neuro symptoms.
+cn_symp <- lc_symptoms |>
+  filter(phenotype %in% c("Cardiopulmonary", "Neuropsychiatric")) |>
+  inner_join(meta, by = c("ICD10Code", "phenotype"))
+
+# Table of all post window ICD-10 codes that were used to label the phenotype of long covid cases. For neuro and cardio these are only neuro/cardio codes. For multisystem the codes can be neuro, cardio, or digestive.
+symptoms_all <- bind_rows(
+  multi_symp,
+  cn_symp)
+
+# Number of long covid cases per phenotype. This matches Table 1.
+cases_phenotype <- symptoms_all |>
+  select(patient, phenotype) |>
+  unique() |>
+  count(phenotype, name = "tot_pheno")
+
+# % of cases with a label that have a symptom
+symp_data <- symptoms_all |>
+  
+  # Make 1 row per phenotype and symptom
+  select(patient, phenotype, symptom) |>
+  unique() |>
+  count(phenotype, symptom) |>
+  left_join(cases_phenotype, by = "phenotype") |>
+  mutate(
+    p_symp = n / tot_pheno * 100,
+    symptom = str_wrap(str_to_sentence(symptom), 16),
+    symptom = if_else(str_detect(
+      symptom, "irritable"), "Incontinence, IBS", symptom),
+    symptom = if_else(symptom == "Bleeding", "GI bleeding", symptom),
+    symptom = fct_reorder(symptom, p_symp),
+    phenotype = as_factor(phenotype))
+
+# Loop over phenotypes to create figures
+symp_figs <- map(
+  c("Cardiopulmonary", "Neuropsychiatric", "Multisystem"), function(p) {
+    f <- symp_data |>
+      filter(phenotype == p) |>
+      mutate(symptom = fct_reorder(symptom, p_symp)) |>
+      ggplot(aes(x = p_symp, y = symptom)) +
+      geom_point(size = 2.5, color = "gray") +
+      scale_x_continuous(
+        limits = c(0, 100),
+        breaks = seq(0, 100, 20)) +
+      facet_wrap(~ phenotype) +
+      labs(x = "Percent of Cases") +
+      theme(axis.title.y = element_blank())
+    if(p == "Multisystem") {
+      f <- f + theme(axis.text.y = element_text(size = 7.5))
+    } else {
+      f <- f + theme(axis.text.y = element_text(size = 9))
+    }
+    f })
+
+# Combine into panel fig
+left_col <- (symp_figs[[1]] / symp_figs[[2]]) +
+  plot_layout(axes = "collect")
+symp_fig <- left_col | symp_figs[[3]] +
+  plot_layout(
+    axes = "collect")
+  
+# Write to file & insert into word doc
+ggsave(
+  filename = here("figures/symp_fig.tiff"),
+  plot = symp_fig,
+  device = "tiff",
+  units = "in",
+  dpi = 600,
+  width = 6.5,
+  height = 6,
+  compression = "lzw")
+knitr::include_graphics(here("figures/symp_fig.tiff"))
+
+# Compute percent of multisymptom cases that have at least one digestive code
+digestive_codes <- meta |>
+  filter(phenotype == "Digestive") |>
+  pull(ICD10Code)
+percent_dig_multi <- multi_symp |>
+  mutate(is_digestive = if_else(ICD10Code %in% digestive_codes, 1L, 0L)) |>
+  group_by(patient) |>
+  summarize(has_digestive = if_else(
+    sum(is_digestive, na.rm = TRUE) > 0, 100L, 0L), .groups = "drop") |>
+  pull(has_digestive) |>
+  mean() |>
+  round(digits = 0)
+
+# Compute percent of multisymptom cases that have at least one sleep disturbance code. This matches the 63% in symp_data, which is used to create Figure 2.
+sleep_codes <- meta |>
+  filter(symptom == "sleep disturbance") |>
+  pull(ICD10Code)
+percent_sleep_multi <- multi_symp |>
+  mutate(is_sleep = if_else(ICD10Code %in% sleep_codes, 1L, 0L)) |>
+  group_by(patient) |>
+  summarize(has_sleep = if_else(
+    sum(is_sleep, na.rm = TRUE) > 0, 100L, 0L), .groups = "drop") |>
+  pull(has_sleep) |>
+  mean() |>
+  round(digits = 0)
+
+# Fx to format numbers to enough digits
+format_number <- function(x) {
+  sapply(x, function(val) {
+    if (is.na(val)) return(NA_character)
+    if (abs(val) >= 0.01) {
+      formatC(val, format = "f", digits = 2)
+    } else {
+      formatC(val, format = "f", digits = max(2, ceiling(-log10(abs(val))) + 2))
+    }
+  })
+}
+
+# Table of adjusted risk differences across all models. This will feed into the risk difference figure, printing esimates & CIS, and supplementary table.
+rd_dat <- bind_rows(rd$rd1, rd$rd2, rd$rd3) |>
+  select(model, term, contrast, outcome = group, estimate, p.value, conf.low,
+         conf.high) |>
+
+  # Code for p < 0.05, convert to %
+  mutate(
+    statsig = if_else(p.value < 0.05, "yes", "no"),
+    across(c(estimate, conf.low, conf.high), ~ . * 100),
+    
+    # Clean up labels & set ordering
+    term = if_else(term == "clade", "variant", term),
+    term_contrast = paste0(str_to_title(term), ": ", contrast),
+    term_contrast = if_else(str_detect(term_contrast, "Svi"),
+                            "SVI: Low - High", term_contrast),
+    term_contrast = fct_relevel(
+      term_contrast, "SVI: Low - High", "Rurality: Low - High", "Sex: M - F",
+      "Age: +1", "Variant: Omicron 2022+ - Delta",
+      "Variant: Pre-Delta - Omicron 2022+"),
+    outcome = fct_relevel(
+      outcome, "Cardiopulmonary", "Neuropsychiatric", "Multisystem"),
+    model = fct_relevel(model, "Base + Health + Treatment", "Base + Health"),
+    
+    est_ci = paste0(
+      format_number(estimate), " [",
+      format_number(conf.low), ", ",
+      format_number(conf.high), "]"))
+
+# Compute minimum p-value among all non-statsig variant contrats
+min_variant_p <- rd_dat |>
+  filter(
+    term == "variant",
+    !contrast %in% c("Pre-Delta - Early Omicron", "Pre-Delta - Omicron 2022+",
+                     "Omicron 2022+ - Delta")) |>
+  pull(p.value) |>
+  min() |>
+  round(digits = 2)
+
+# Compute minimum p-value among all contrasts between omicron groups
+min_omicron_p <- rd_dat |>
+  filter(
+    term == "variant",
+    contrast == "Omicron 2022+ - Early Omicron") |>
+  pull(p.value) |>
+  min() |>
+  round(digits = 2)
+
+# Get p-value for marginal rurality effect on recovery in BHT model
+rurality_p <- rd_dat |>
+  filter(
+    term == "rurality",
+    outcome == "Recovered",
+    model == "Base + Health + Treatment") |>
+  pull(p.value) |>
+  round(digits = 3)
+
+```
+
+## Modeling
+
+The four possible outcomes---the cardiopulmonary, neuropsychiatric, and multisystem long COVID phenotypes along with recovered---were modeled using multinomial logistic regression [@venables2002]. Three models were fit. The *Base* (B) model included only the target predictors: viral variant, age, sex, rurality and SVI. The *Base + Health* (BH) and *Base + Health + Treatment* (BHT) models were intended as sensitivity checks to assess estimates for the target predictors in the presence of controls for health (comorbidity, smoking, health care utilization), and treatment (vaccination and Paxlovid).
+
+Prior to modeling, days of health care utilization was log-transformed to improve normality, and utilization and age were centered and scaled. *G*-computation [@robins1986] was used to convert the raw model coefficients into adjusted marginal effects. Although often associated with the assessment of causal effects [@hernán2024], here *g*-computation is used to assess target effects while holding all other predictors at their empirical distributions---no causal interpretation should be inferred. All effects are reported as population-adjusted risk differences with 95% confidence intervals on a percent scale [@arel-bundock2024].
+
+# Results
+
+Adjusted risk differences for all target contrasts are given in Supplementary @tbl-rd. The same estimates are shown in @fig-rd, with the exception---for reasons of space---of non-significant variant contrasts.
+
+```{r}
+#| label: fig-rd
+#| fig-cap: "Adjusted risk differences with 95% CIs. Estimates are grouped into panels representing the four outcomes: cardiopulmonary, neuropsychiatric, multisystem, and recovered. Each panel illustrates estimates for the *y*-axis contrasts from the three models. Filled circles represent estimates in which the CI does not include zero. Variant contrasts with no filled circles (e.g., pre-Delta - Delta) are omitted to save space."
+
+# Risk difference figure
+pd = position_dodge(0.7)
+rd_fig <- rd_dat |>
+    
+  # Contrasts we want to focus on
+  filter(
+    term %in% c("age", "sex", "rurality", "svi") |
+    (term == "variant" & contrast %in%
+       c("Pre-Delta - Early Omicron", "Pre-Delta - Omicron 2022+"))) |>
+  ggplot(aes(x = estimate, y = term_contrast, shape = statsig, color = model,
+             group = model)) +
+  geom_vline(xintercept = 0, linetype = "dashed", linewidth = 0.2) +
+  geom_linerange(
+    aes(xmin = conf.low, xmax = conf.high),
+    position = pd) +
+  geom_point(position = pd, size = 2.5) +
+  scale_color_okabe_ito() +
+  scale_shape_manual(values = c("no" = 1, "yes" = 16)) +
+  facet_wrap(~ outcome) +
+  guides(shape = "none") +
+  labs(x = "Adjusted Risk Difference",
+       color = "Model") +
+  theme(axis.title.y = element_blank(),
+        legend.position = c(0.4, 1.1),
+        plot.margin = margin(t = 36, b = 10, r = 10, l = 10)) +
+  guides(color = guide_legend(
+    title = "Model", reverse = TRUE, direction = "horizontal"))
+
+# Write to file & insert into word doc
+ggsave(
+  filename = here("figures/rd_fig.tiff"),
+  plot = rd_fig,
+  device = "tiff",
+  units = "in",
+  dpi = 600,
+  width = 6.5,
+  height = 7,
+  compression = "lzw")
+knitr::include_graphics(here("figures/rd_fig.tiff"))
+
+```
+
+Results for the early Omicron and Omicron 2022+ variants were nearly identical. In direct comparisons there was no evidence that the two groups differed from one another (all *p* \> `r min_omicron_p`), and both patterned similarly relative to pre-Delta in that they were associated with less recovery and more multisystem long COVID. Differences with pre-Delta were robust to model specification for early Omicron on both the recovered (B: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Recovered", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Recovered", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Recovered", model == "Base + Health + Treatment") |> pull(est_ci)`) and multisystem outcomes (B: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Multisystem", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Multisystem", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Multisystem", model == "Base + Health + Treatment") |> pull(est_ci)`). For Omicron 2022+, differences with pre-Delta were robust across all three models on the multisystem outcome (B: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Multisystem", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Multisystem", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Multisystem", model == "Base + Health + Treatment") |> pull(est_ci)`), and all but the treatment model on the recovered outcome (B: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Recovered", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Recovered", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Recovered", model == "Base + Health + Treatment") |> pull(est_ci)`). No other contrasts involving viral variant were significant (all *p* \> `r min_variant_p`).
+
+Age in the base model was positively associated with the cardiopulmonary (`r rd_dat |> filter(term == "age", outcome == "Cardiopulmonary", model == "Base") |> pull(est_ci)`) and multisystem outcomes (`r rd_dat |> filter(term == "age", outcome == "Multisystem", model == "Base") |> pull(est_ci)`), and negatively associated with the recovered outcome (`r rd_dat |> filter(term == "age", outcome == "Recovered", model == "Base") |> pull(est_ci)`). These associations failed to survive the addition of health and treatment covariates in the BH (cardiopulmonary: `r rd_dat |> filter(term == "age", outcome == "Cardiopulmonary", model == "Base + Health") |> pull(est_ci)`; multisystem: `r rd_dat |> filter(term == "age", outcome == "Multisystem", model == "Base + Health") |> pull(est_ci)`; recovered: `r rd_dat |> filter(term == "age", outcome == "Recovered", model == "Base + Health") |> pull(est_ci)`) and BHT models (cardiopulmonary: `r rd_dat |> filter(term == "age", outcome == "Cardiopulmonary", model == "Base + Health + Treatment") |> pull(est_ci)`; multisystem: `r rd_dat |> filter(term == "age", outcome == "Multisystem", model == "Base + Health + Treatment") |> pull(est_ci)`; recovered: `r rd_dat |> filter(term == "age", outcome == "Recovered", model == "Base + Health + Treatment") |> pull(est_ci)`). In contrast, a negative association of age with the neuropsychiatric outcome emerged as significant in the BH (`r rd_dat |> filter(term == "age", outcome == "Neuropsychiatric", model == "Base + Health") |> pull(est_ci)`) and BHT models (`r rd_dat |> filter(term == "age", outcome == "Neuropsychiatric", model == "Base + Health + Treatment") |> pull(est_ci)`).
+
+Across models, female sex was consistently associated with less recovery (B: `r rd_dat |> filter(term == "sex", outcome == "Recovered", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(term == "sex", outcome == "Recovered", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(term == "sex", outcome == "Recovered", model == "Base + Health + Treatment") |> pull(est_ci)`), and more neuropsychiatric long COVID (B: `r rd_dat |> filter(term == "sex", outcome == "Neuropsychiatric", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(term == "sex", outcome == "Neuropsychiatric", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(term == "sex", outcome == "Neuropsychiatric", model == "Base + Health + Treatment") |> pull(est_ci)`).
+
+Recovery was marginally higher in the low versus high rurality groups after controlling for patient health (`r rd_dat |> filter(term == "rurality", outcome == "Recovered", model == "Base + Health") |> pull(est_ci)`) and treatment (`r rd_dat |> filter(term == "rurality", outcome == "Recovered", model == "Base + Health + Treatment") |> pull(est_ci)`, both *p* = `r rurality_p`). All other rurality and SVI contrasts were null (all *p* \> `r rd_dat |> filter(term %in% c("rurality", "svi"), !(term == "rurality" & outcome == "Recovered")) |> pull(p.value) |> min() |> round(digits = 2)`).
+
+@fig-pred shows adjusted predictions for all target predictors, based on the Base + Health + Treatment model.
+
+```{r}
+#| label: fig-pred
+#| fig-cap: Adjusted outcome prevalences in the Base + Health + Treatment model by viral variant (A), age (B), sex (C), rurality (D), and SVI (E). Error bars and shading represent standard errors.
+
+# Clade figure
+pd <- position_dodge(0.4)
+clade_fig <- clade_pred |>
+  ggplot(aes(x = clade, y = estimate, group = group, color = group)) +
+  geom_line(position = pd) +
+  geom_linerange(
+    aes(ymin = estimate - std.error, ymax = estimate + std.error),
+    position = pd, linewidth = 0.4) +
+  geom_point(position = pd) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
+  scale_color_okabe_ito(order = c(1:3, 7)) +
+  labs(x = "Variant",
+       y = "Prevalence (%)",
+       color = "Outcome") +
+  theme(
+    axis.text.x = element_text(angle = 15, hjust = 1)) +
+  guides(color = "none")
+
+# Age figure
+age_fig <- age_pred |>
+  mutate(group = fct_relevel(group,
+    "Cardiopulmonary", "Neuropsychiatric", "Multisystem")) |>
+  ggplot(aes(x = age_unscaled, y = estimate, group = group, color = group,
+             fill = group)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = estimate - std.error, ymax = estimate + std.error),
+              color = NA,
+              alpha = 0.2) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
+  scale_color_okabe_ito(order = c(1:3, 7)) +
+  scale_fill_okabe_ito(order = c(1:3, 7)) +
+  labs(x = "Age (Years)",
+       color = "Outcome",
+       fill = "Outcome") +
+  guides(fill = "none") +
+  theme(axis.title.y = element_blank())
+
+# Sex figure
+sex_fig <- sex_pred |>
+  ggplot(aes(x = sex, y = estimate, group = group, color = group)) +
+  geom_line(position = pd) +
+  geom_linerange(
+    aes(ymin = estimate - std.error, ymax = estimate + std.error),
+    position = pd, linewidth = 0.4) +
+  geom_point(position = pd) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
+  scale_color_okabe_ito(order = c(1:3, 7)) +
+  labs(x = "Sex",
+       y = "Prevalence (%)",
+       color = "Outcome") +
+  guides(color = "none")
+
+# Rurality figure
+rural_fig <- rural_pred |>
+  ggplot(aes(x = rurality, y = estimate, group = group, color = group)) +
+  geom_line(position = pd) +
+  geom_linerange(
+    aes(ymin = estimate - std.error, ymax = estimate + std.error),
+    position = pd, linewidth = 0.4) +
+  geom_point(position = pd) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
+  scale_color_okabe_ito(order = c(1:3, 7)) +
+  labs(x = "Rurality",
+       color = "Outcome") +
+  guides(color = "none") +
+  theme(axis.title.y = element_blank())
+
+# SVI figure
+svi_fig <- svi_pred |>
+  ggplot(aes(x = svi, y = estimate, group = group, color = group)) +
+  geom_line(position = pd) +
+  geom_linerange(
+    aes(ymin = estimate - std.error, ymax = estimate + std.error),
+    position = pd, linewidth = 0.4) +
+  geom_point(position = pd) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
+  scale_color_okabe_ito(order = c(1:3, 7)) +
+  labs(x = "SVI",
+       color = "Outcome") +
+  guides(color = "none") +
+  theme(axis.title.y = element_blank())
+
+# Panel will consist of a legend area at top, then 2 rows of figures
+leg <- guide_area()
+top_row <- clade_fig + age_fig
+bottom_row <- sex_fig + rural_fig + svi_fig
+
+# Put panels together
+pred_fig <- (leg / (top_row / bottom_row)) +
+  plot_layout(
+    guides = "collect",
+    axes = "collect",
+    heights = c(1, 12)) +
+  plot_annotation(tag_levels = "A") &
+  theme(legend.position = "top")
+
+# Write to file & insert into word doc
+ggsave(
+  filename = here("figures/pred_fig.tiff"),
+  plot = pred_fig,
+  device = "tiff",
+  units = "in",
+  dpi = 600,
+  width = 6.5,
+  height = 6,
+  compression = "lzw")
+knitr::include_graphics(here("figures/pred_fig.tiff"))
+
+```
+
+# Discussion
+
+The present study investigated viral variant and sociodemographic predictors of cardiopulmonary, neuropsychiatric, and multisystem long COVID phenotypes among veterans in Idaho. Two main features set this work apart from other studies of long COVID. First, most other studies that have looked at viral variant as a long COVID predictor have used date-based methods to define the different variants [@xie2024; @perlis2022; @maccallum-bridges2024; @ioannou2022]. Date-based methods assume that all COVID cases diagnosed on a particular date are caused by whatever variant is most common on that date, typically viewed through a national lens. While relatively easy to implement, this is obviously an oversimplification---one that potentially injects significant noise into the analysis. In contrast, the present work is perhaps the first to define viral variant based on genetic sequencing in a relatively large cohort, numbering in the thousands.
+
+The second feature that distinguishes the present study is its focus on long COVID in a relatively rural population. Most other long COVID studies---even those that include patients from rural areas---tend to highlight urban trends due to urban population dominance [@mueller2021]. And while there are a smaller number of studies that have investigated long COVID in specifically rural populations [@mora2024], this is the first work to focus on a state that has one of the lowest population densities in the U.S. [@censuspop2021]. Such focus is in keeping with recent U.S. government initiatives to mitigate inequities in long COVID research by directing attention and resources to rural regions [@HHS2022].
+
+## Sociodemographic effects
+
+We replicated several sociodemographic effects documented in other studies. First, there were robust sex differences that persisted across model specifications: female patients experienced less recovery than males, due primarily to higher prevalence of the neuropsychiatric long COVID outcome. Other studies have likewise shown more long COVID in females [@perlis2022], and specifically more neuropsychiatric symptoms. For example, a recent meta-analysis found increased female risk for post-acute fatigue, headache, brain fog, and anosmia---all of which are part of the present study's definition of neuropsychiatric long COVID---and proposed that these results may be related to heightened immune reactivity in women, which may predispose them to increased neuroinflammation, demyelination, and neurodegeneration in response to infection with SARS-CoV-2 [@gorenshtein2025]. Unique to this study, we demonstrated sex differences in the context of residence in a highly rural state.
+
+Second, we found that higher age was associated with a shift in the long COVID phenotype mix among non-recovered cases away from neuropsychiatric manifestations and (non-significantly) towards cardiopulmonary and multisystem phenotypes (see @fig-pred, Panel B). The inverse association between age and neuropsychiatric long COVID was present across most model specifications, and reached statistical significance after adjusting for patient health and treatment, indicating that neuropsychiatric presentations are relatively younger-skewed. This pattern has been reported elsewhere [@choudhury2025; @fain2025]. Hypotheses explaining it include worse baseline health among older patients, which makes it difficult to distinguish pre-existing neuropsychiatric symptoms from long COVID symptoms, the possibility that older patients' immune systems are less prone to neurologically-damaging hyperactivation during the acute phase of infection, and---for psychiatric symptoms---greater resilience and emotional stability among older patients [@vahia2020].
+
+Although all rurality effects were null, they were in the expected direction: more disease and less recovery in the high versus low rurality groups. In fact, the results indicate marginally less recovery when rurality is high, even after controlling for health and treatment. Other studies have reported significant positive associations between rurality and long COVID [@maccallum-bridges2024; @shi2025], but based on much larger samples, suggesting that the present study is underpowered for the detection of rurality effects.
+
+All SVI effects were likewise null. While there are a number of studies connecting social vulnerability to acute-phase COVID outcomes, only a handful have looked at long COVID, and with somewhat mixed results. For example, Ryu and colleagues found that higher social vulnerability---as measured by the Minority Health Social Vulnerability Index (MHSVI)---was not associated with long COVID, but that there was a positive association between the medical vulnerability component of the MHSVI and long COVID [@ryu2025]. Another study by Fakhraei et al. found no relationship between the same county-level SVI measure used in the present work and long COVID, but a significant association in some analyses when using an individual-level SVI measure [@fakhraei2025]. These results suggest that the relationship between social vulnerability and long COVID is nuanced, and may require the right combination of sample size, measure, and analysis to detect.
+
+## Viral variant effects
+
+Our results suggest that later viral variants are associated with more long COVID. Specifically, the two Omicron variants---early Omicron and Omicron 2022+---were not different from one another and patterned similarly relative to pre-Delta, where each was associated with more multisystem long COVID and less recovery. The association with multisystem long COVID holds even after adjusting for health and treatment. And the association of early Omicron with lower recovery holds after adjustment for health and treatment, while the association of Omicron 2022+ with lower recovery holds after adjustment for health, but not treatment.
+
+While a smaller number of studies have likewise reported more long COVID in Omicron versus pre-Omicron variants [@kiatratdasakul2024], or no overall difference between the two [@padilla2024], the majority of studies indicate the opposite: that Omicron variants are actually associated with lower prevalence [@xie2024; @antonelli2022; @fernández-de-las-peñas2022; @perlis2022] and shorter duration [@pfrommer2025] of post-acute symptoms relative to pre-Omicron variants.
+
+One hypothesis that may help to resolve the apparent disagreement between the present results and other studies is that while Omicron seems to be associated with less long COVID in general, it may actually be associated with more long COVID when specific disease phenotypes are considered. For example, as in the present study, Xie and colleagues [@xie2024] defined long COVID based on assessment of veterans' electronic health records, but in a much larger sample (*N* = 441,583). They found more long COVID among patients infected during the pre-Omicron versus Omicron era. However, in a sub-analysis of patients with specifically gastrointestinal symptoms the results were flipped: there was more disease among patients infected during the Omicron era. Similarly, Padilla et al. [@padilla2024] found more gastrointestinal long COVID symptoms among Omicron versus pre-Omicron patients.
+
+These results are relevant because the multisystem phenotype in the present study was defined in part based on ICD-10 codes for gastrointestinal symptoms. In fact, while no single gastrointestinal symptom was as common among multisystem patients as sleep disturbance or fatigue (see @fig-symptoms), when gastrointestinal symptoms are considered as a group, fully `r percent_dig_multi`% of multisystem patients had some gastrointestinal involvement.
+
+So while there is some early consensus that Omicron is generally associated with less long COVID, a smaller number of studies that have looked at associations between SARS-CoV-2 variants and specific long COVID phenotypes suggest that Omicron infection may manifest with more post-acute gastrointestinal symptoms than pre-Omicron variants. Further work investigating this possibility is warranted.
+
+## Limitations
+
+Our focus on long COVID in Idaho means that the study sample is neither as large nor as representative of broader populations as in other long COVID studies based on electronic health records [@bowe2022; @xie2024; @ioannou2022]. While this limitation may reduce confidence in the results and their generalizability, it must be weighed against the need to investigate long COVID in relatively understudied rural areas [@mueller2021], which by definition have smaller populations.
+
+The present work's definition of long COVID relied on the appearance of symptoms in the 90-270 days after infection that had not appeared in patients' records in the previous two years. While this choice was made to reduce false positive long COVID classifications, it also undoubtedly had the consequence of causing us to miss cases characterized by the worsening of pre-existing symptoms.
+
+## Conclusion
+
+We investigated the effects of viral variant and sociodemographic predictors on the prevalence of three long COVID phenotypes among Idaho veterans. Our methods are notable for the use of genetic sequencing to define viral variants.
+
+Variant effects showed up as less recovery and more multisystem long COVID in Omicron variants relative to pre-Delta, a finding that may reflect a particular association of Omicron with post-acute gastrointestinal symptoms. Sociodemographic effects included less recovery and more neuropsychiatric long COVID among women versus men, and a negative association of age with the neuropsychiatric phenotype.
+
+{{< pagebreak >}}
+
+# Conflict of Interest
+
+The authors report no conflict of interest.
+
+# Author Contributions
+
+# Funding
+
+This work was supported by NIH NIGMS P20 GM109007, NIH NIGMS P20 GM103408 (Idaho INBRE), a Veterans Affairs contract for sequencing (VA SeqCURE), and VA SHIELD specimens.
+
+# Data Availability Statement
+
+The contents of this study are based on data and analysis code available in this publicly accessible repository: https://github.com/ammonslab/long_covid.
+
+# Required Statement
+
+This content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health, U.S. Department of Veterans Affairs, or the United States government.
+
+# References
+
+::: {#refs}
+:::
+
+{{< pagebreak >}}
+
+# Supplementary Material
+
+## Next generation sequencing of SARS-CoV-2 viral variants
+
+Variant sequencing was performed at the BVAMC SeqCURE (Sequencing Collaborations United for Research and Epidemiology) Core lab [@hottel]. In brief, SARS-CoV-2 PCR positive upper respiratory specimens (nasal-pharyngeal swabs) were collected for clinical diagnosis and sequencing. Specimens were confirmed positive by PCR molecular test (TaqPath COVID-19 Combo Kit, ThermoFisher Scientific). PCR positive isolates with cycle threshold (Ct) value of ≤ 30 were selected. Library preparation was conducted using the COVIDSeq library kit (Illumina, Inc.) with the Artic V4 primer set substitution. The prepared libraries were sequenced using a NextSeq 550Dx mid output kit (2x75 bp paired end) or NextSeq 2000 P3 kit (2x150 bp paired end). Consensus assemblies were generated by either the NextGen 2000 platform or the NextGen 550Dx platform (run in ROU mode) using the DRAGEN COVID Lineage v.3.5.9 accessed via Illumina BaseSpace with the Consensus Sequence Generation Threshold parameter set to the default value of 90. Consensus assemblies were analyzed using the pangolin software package (pangolin v4.3.1, pUShER v1.22) for lineage assignment and uploaded to Nextclade for clade assignment and sequence quality classification. All sequencing data and clade calls for SARS-CoV-2 variants were deposited in the VA SHIELD repository [@harley2022].
+
+{{< pagebreak >}}
+
+```{r icd}
+#| label: tbl-icd
+#| tbl-cap: ICD-10 codes used to define Long COVID phenotypes. Codes are categorized by symptom and the primary organ system affected.
+
+# Long covid codes & symptoms by system
+icd10 |>
+  flextable() |>
+  font(fontname = "Times New Roman", part = "all") |>
+  fontsize(size = 10, part = "all") |>
+  set_table_properties(layout = "autofit")
+
+```
+
+{{< pagebreak >}}
+
+```{r}
+#| label: tbl-rd
+#| tbl-cap: "Risk difference estimates and 95% CIs by term, contrast, and outcome for four models: Unadjusted, Base, Base + Health, and Base + Health + Treatment."
+
+# Table of unadjusted risk differences
+unadj_rd <- read_feather(here(
+  "data/unadj_rd.feather")) |>
+  mutate(
+    across(where(is.numeric), ~ format_number(.)),
+    est_ci = paste0(Estimate, " [", conf.low, ", ", conf.high, "]"),
+    model = "Unadjusted")|>
+  select(Term, Contrast, Outcome, model, est_ci)
+
+# rbind unadjusted & adjusted risk differences & pivot wide
+rd_wide <- bind_rows(
+  unadj_rd,
+  rd_dat |>
+    select(Term = term, Contrast = contrast, Outcome = outcome, model, est_ci) |>
+    mutate(
+      Term = str_to_title(Term))) |>
+  mutate(Term = if_else(Term == "Svi", "SVI", Term)) |>
+  pivot_wider(names_from = model, values_from = est_ci) |>
+  arrange(Term, Contrast, Outcome)
+
+# Print table
+rd_wide |>
+  flextable() |>
+  font(fontname = "Times New Roman", part = "all") |>
+  fontsize(size = 10, part = "all") |>
+  set_table_properties(layout = "autofit") |>
+  add_header_row(values = c("", "Model"), colwidths = c(3, 4)) %>%
+  align(align = "center", part = "header")
+
+```
