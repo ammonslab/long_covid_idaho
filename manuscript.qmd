@@ -226,8 +226,8 @@ consort_fig <- consort_plot(
 # NOTE: This is printing "svg 2" to word doc. Fix.
 tiff(
   here("figures/consort_fig.tiff"),
-  width = 5,
-  height = 3,
+  width = 5.5,
+  height = 3.5,
   units = "in",
   res = 600
 )
