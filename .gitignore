@@ -2,7 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
-*.docx
+frontiers_long_covid_rev3.docx
+long_covid_manuscript IT edits 11_4_25.docx
+manuscript.docx
 sample_data.csv
 age_scale.rds
 age_pred.feather
