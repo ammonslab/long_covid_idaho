@@ -17,5 +17,8 @@ patient_crosswalk.feather
 rd.rds
 unadj_rd.feather
 *.tiff
-renv/
+renv/library
+renv/staging
+renv/.gitignore
+renv/settings.json
 Thumbs.db
