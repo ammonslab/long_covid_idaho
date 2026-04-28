@@ -2,6 +2,7 @@ source("renv/activate.R")
 
 # Packages ----------------------------------------------------
 
+library(pak)
 library(tidyverse)
 library(odbc) # Connect to db
 library(DBI) # Work with db
