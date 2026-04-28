@@ -1,0 +1,4887 @@
+[
+    {
+        "URL": "https://www.fema.gov/disaster/historic/coronavirus",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "container-title": "U.S. Federal Emergency Management Agency",
+        "id": "FEMAcovid2024",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "key": "E3ZUKGYB",
+        "language": "en",
+        "libraryid": "1",
+        "note": "Citation Key: FEMA_covid2024",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Coronavirus (COVID-19) response",
+        "type": "webpage"
+    },
+    {
+        "DOI": "10.15585/mmwr.mm7306a4",
+        "ISSN": "0149-21951545-861X",
+        "URL": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7306a4.htm",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Ford",
+                "given": "Nicole D."
+            },
+            {
+                "family": "Agedew",
+                "given": "Abraham"
+            },
+            {
+                "family": "Dalton",
+                "given": "Alexandra F."
+            },
+            {
+                "family": "Singleton",
+                "given": "Jordan"
+            },
+            {
+                "family": "Perrine",
+                "given": "Cria G."
+            },
+            {
+                "family": "Saydah",
+                "given": "Sharon"
+            }
+        ],
+        "container-title": "Morbidity and Mortality Weekly Report",
+        "container-title-short": "MMWR Morb Mortal Wkly Rep",
+        "id": "ford2024",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "key": "STJY4PU7",
+        "language": "en-us",
+        "libraryid": "1",
+        "page": "135-136",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "www.cdc.gov",
+        "title": "Notes from the field: Long COVID prevalence among adults—United States, 2022",
+        "title-short": "Notes from the Field",
+        "type": "article-journal",
+        "volume": "73"
+    },
+    {
+        "DOI": "10.1016/j.ahr.2023.100137",
+        "ISSN": "2667-0321",
+        "URL": "https://www.sciencedirect.com/science/article/pii/S2667032123000215",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Mata",
+                "given": "Raveena"
+            },
+            {
+                "family": "Bankole",
+                "given": "Ayomide O."
+            },
+            {
+                "family": "Barnhill",
+                "given": "Jessica"
+            },
+            {
+                "family": "Roth",
+                "given": "Isabel"
+            }
+        ],
+        "container-title": "Aging and Health Research",
+        "container-title-short": "Aging Health Res",
+        "id": "mata2023",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    6,
+                    1
+                ]
+            ]
+        },
+        "key": "2E9FIVDU",
+        "libraryid": "1",
+        "page": "100137",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "ScienceDirect",
+        "title": "A descriptive exploration of younger and older adults’ experiences of Integrative Medical Group Visits for Long COVID",
+        "type": "article-journal",
+        "volume": "3"
+    },
+    {
+        "DOI": "10.1126/science.adl0867",
+        "URL": "https://www.science.org/doi/full/10.1126/science.adl0867",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    10,
+                    2
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Al-Aly",
+                "given": "Ziyad"
+            },
+            {
+                "family": "Topol",
+                "given": "Eric"
+            }
+        ],
+        "container-title": "Science",
+        "id": "al-aly2024",
+        "issue": "6685",
+        "issued": {
+            "date-parts": [
+                [
+                    2024,
+                    2,
+                    23
+                ]
+            ]
+        },
+        "key": "CAHFEZQ7",
+        "libraryid": "1",
+        "page": "830-832",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "American",
+        "source": "science.org (Atypon)",
+        "title": "Solving the puzzle of Long Covid",
+        "type": "article-journal",
+        "volume": "383"
+    },
+    {
+        "DOI": "10.1093/ofid/ofaf533",
+        "ISSN": "2328-8957",
+        "URL": "https://doi.org/10.1093/ofid/ofaf533",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    27
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Hou",
+                "given": "Yiren"
+            },
+            {
+                "family": "Gu",
+                "given": "Tian"
+            },
+            {
+                "family": "Ni",
+                "given": "Zhouchi"
+            },
+            {
+                "family": "Shi",
+                "given": "Xu"
+            },
+            {
+                "family": "Ranney",
+                "given": "Megan L"
+            },
+            {
+                "family": "Mukherjee",
+                "given": "Bhramar"
+            }
+        ],
+        "container-title": "Open Forum Infectious Diseases",
+        "container-title-short": "Open Forum Infect Dis",
+        "id": "hou2025",
+        "issue": "9",
+        "issued": {
+            "date-parts": [
+                [
+                    2025,
+                    9,
+                    1
+                ]
+            ]
+        },
+        "key": "Y8SKVUAZ",
+        "libraryid": "1",
+        "page": "ofaf533",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "Global prevalence of long COVID, its subtypes, and risk factors: An updated systematic review and meta-analysis",
+        "title-short": "Global prevalence of long COVID, its subtypes, and risk factors",
+        "type": "article-journal",
+        "volume": "12"
+    },
+    {
+        "DOI": "10.1056/NEJMoa2403211",
+        "ISSN": "0028-4793",
+        "URL": "https://www.nejm.org/doi/full/10.1056/NEJMoa2403211",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    7,
+                    22
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Xie",
+                "given": "Yan"
+            },
+            {
+                "family": "Choi",
+                "given": "Taeyoung"
+            },
+            {
+                "family": "Al-Aly",
+                "given": "Ziyad"
+            }
+        ],
+        "container-title": "New England Journal of Medicine",
+        "container-title-short": "N Engl J Med",
+        "id": "xie2024",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "key": "VE4S7L4M",
+        "libraryid": "1",
+        "medical society\n_eprint": "https://www.nejm.org/doi/pdf/10.1056/NEJMoa2403211",
+        "note": "_eprint: https://www.nejm.org/doi/pdf/10.1056/NEJMoa2403211",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Massachusetts",
+        "source": "Taylor and Francis+NEJM",
+        "title": "Postacute sequelae of SARS-CoV-2 infection in the pre-delta, delta, and omicron eras",
+        "type": "article-journal",
+        "volume": "391"
+    },
+    {
+        "DOI": "10.1001/jamainternmed.2023.0750",
+        "ISSN": "2168-6106",
+        "URL": "https://doi.org/10.1001/jamainternmed.2023.0750",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    12,
+                    20
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Tsampasian",
+                "given": "Vasiliki"
+            },
+            {
+                "family": "Elghazaly",
+                "given": "Hussein"
+            },
+            {
+                "family": "Chattopadhyay",
+                "given": "Rahul"
+            },
+            {
+                "family": "Debski",
+                "given": "Maciej"
+            },
+            {
+                "family": "Naing",
+                "given": "Thin Kyi Phyu"
+            },
+            {
+                "family": "Garg",
+                "given": "Pankaj"
+            },
+            {
+                "family": "Clark",
+                "given": "Allan"
+            },
+            {
+                "family": "Ntatsaki",
+                "given": "Eleana"
+            },
+            {
+                "family": "Vassiliou",
+                "given": "Vassilios S."
+            }
+        ],
+        "container-title": "JAMA Internal Medicine",
+        "container-title-short": "JAMA Intern Med",
+        "id": "tsampasian2023",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    6,
+                    1
+                ]
+            ]
+        },
+        "key": "GD92HCAN",
+        "libraryid": "1",
+        "page": "566-580",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "Risk factors associated with Post−COVID-19 Condition: A systematic review and meta-analysis",
+        "title-short": "Risk factors associated with post−COVID-19 condition",
+        "type": "article-journal",
+        "volume": "183"
+    },
+    {
+        "DOI": "10.1001/jamanetworkopen.2022.38804",
+        "ISSN": "2574-3805",
+        "URL": "https://doi.org/10.1001/jamanetworkopen.2022.38804",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    8,
+                    23
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Perlis",
+                "given": "Roy H."
+            },
+            {
+                "family": "Santillana",
+                "given": "Mauricio"
+            },
+            {
+                "family": "Ognyanova",
+                "given": "Katherine"
+            },
+            {
+                "family": "Safarpour",
+                "given": "Alauna"
+            },
+            {
+                "family": "Lunz Trujillo",
+                "given": "Kristin"
+            },
+            {
+                "family": "Simonson",
+                "given": "Matthew D."
+            },
+            {
+                "family": "Green",
+                "given": "Jon"
+            },
+            {
+                "family": "Quintana",
+                "given": "Alexi"
+            },
+            {
+                "family": "Druckman",
+                "given": "James"
+            },
+            {
+                "family": "Baum",
+                "given": "Matthew A."
+            },
+            {
+                "family": "Lazer",
+                "given": "David"
+            }
+        ],
+        "container-title": "JAMA Network Open",
+        "container-title-short": "JAMA Netw Open",
+        "id": "perlis2022",
+        "issue": "10",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    10,
+                    27
+                ]
+            ]
+        },
+        "key": "MSUM329T",
+        "libraryid": "1",
+        "page": "e2238804",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "Prevalence and correlates of long COVID Symptoms among US adults",
+        "type": "article-journal",
+        "volume": "5"
+    },
+    {
+        "DOI": "10.1111/jrh.12807",
+        "ISSN": "1748-0361",
+        "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jrh.12807",
+        "_eprint": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/jrh.12807",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    8,
+                    23
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "MacCallum-Bridges",
+                "given": "Colleen L."
+            },
+            {
+                "family": "Hirschtick",
+                "given": "Jana L."
+            },
+            {
+                "family": "Allgood",
+                "given": "Kristi L."
+            },
+            {
+                "family": "Ryu",
+                "given": "Soomin"
+            },
+            {
+                "family": "Orellana",
+                "given": "Robert C."
+            },
+            {
+                "family": "Fleischer",
+                "given": "Nancy L."
+            }
+        ],
+        "container-title": "The Journal of Rural Health",
+        "container-title-short": "J Rural Health",
+        "id": "maccallum-bridges2024",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "key": "7Z7NRKUQ",
+        "language": "en",
+        "libraryid": "1",
+        "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/jrh.12807",
+        "page": "303-313",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "rights": "© 2023 The Authors. The Journal of Rural Health published by Wiley Periodicals LLC on behalf of National Rural Health Association.",
+        "source": "Wiley Online Library",
+        "title": "Cross-sectional population-based estimates of a rural-urban disparity in prevalence of long COVID among Michigan adults with polymerase chain reaction-confirmed COVID-19, 2020-2022",
+        "type": "article-journal",
+        "volume": "40"
+    },
+    {
+        "DOI": "10.1186/s12889-025-22987-8",
+        "ISSN": "1471-2458",
+        "URL": "https://doi.org/10.1186/s12889-025-22987-8",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    30
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Shi",
+                "given": "Juanjuan"
+            },
+            {
+                "family": "Lu",
+                "given": "Rui"
+            },
+            {
+                "family": "Tian",
+                "given": "Yan"
+            },
+            {
+                "family": "Wu",
+                "given": "Fengping"
+            },
+            {
+                "family": "Geng",
+                "given": "Xiaozhen"
+            },
+            {
+                "family": "Zhai",
+                "given": "Song"
+            },
+            {
+                "family": "Jia",
+                "given": "Xiaoli"
+            },
+            {
+                "family": "Dang",
+                "given": "Shuangsuo"
+            },
+            {
+                "family": "Wang",
+                "given": "Wenjun"
+            }
+        ],
+        "container-title": "BMC Public Health",
+        "container-title-short": "BMC Public Health",
+        "id": "shi2025",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2025,
+                    5,
+                    13
+                ]
+            ]
+        },
+        "key": "PDRC53UP",
+        "libraryid": "1",
+        "page": "1758",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "BioMed Central",
+        "title": "Prevalence of and factors associated with long COVID among US adults: A nationwide survey",
+        "title-short": "Prevalence of and factors associated with long COVID among US adults",
+        "type": "article-journal",
+        "volume": "25"
+    },
+    {
+        "DOI": "10.1073/pnas.2019378118",
+        "URL": "https://www.pnas.org/doi/abs/10.1073/pnas.2019378118",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    12,
+                    17
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Mueller",
+                "given": "J. Tom"
+            },
+            {
+                "family": "McConnell",
+                "given": "Kathryn"
+            },
+            {
+                "family": "Burow",
+                "given": "Paul Berne"
+            },
+            {
+                "family": "Pofahl",
+                "given": "Katie"
+            },
+            {
+                "family": "Merdjanoff",
+                "given": "Alexis A."
+            },
+            {
+                "family": "Farrell",
+                "given": "Justin"
+            }
+        ],
+        "container-title": "Proceedings of the National Academy of Sciences",
+        "container-title-short": "Proc Natl Acad Sci USA",
+        "id": "mueller2021",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    1,
+                    5
+                ]
+            ]
+        },
+        "key": "6JXL5IH4",
+        "libraryid": "1",
+        "page": "2019378118",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Proceedings",
+        "source": "pnas.org (Atypon)",
+        "title": "Impacts of the COVID-19 pandemic on rural America",
+        "type": "article-journal",
+        "volume": "118"
+    },
+    {
+        "DOI": "10.1186/s13690-025-01553-z",
+        "ISSN": "2049-3258",
+        "URL": "https://doi.org/10.1186/s13690-025-01553-z",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    8
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Ryu",
+                "given": "Soomin"
+            },
+            {
+                "family": "Allgood",
+                "given": "Kristi L."
+            },
+            {
+                "family": "Xie",
+                "given": "Yanmei"
+            },
+            {
+                "family": "Orellana",
+                "given": "Robert C."
+            },
+            {
+                "family": "Fleischer",
+                "given": "Nancy L."
+            }
+        ],
+        "container-title": "Archives of Public Health",
+        "container-title-short": "Arch Public Health",
+        "id": "ryu2025",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2025,
+                    3,
+                    10
+                ]
+            ]
+        },
+        "key": "5FKEWKFV",
+        "libraryid": "1",
+        "page": "64",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "BioMed Central",
+        "title": "Minority health social vulnerability index and long COVID illness among a statewide, population-based study of adults with polymerase chain reaction-confirmed SARS-CoV-2",
+        "type": "article-journal",
+        "volume": "83"
+    },
+    {
+        "DOI": "10.1161/JAHA.124.038073",
+        "URL": "https://www.ahajournals.org/doi/10.1161/JAHA.124.038073",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    30
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Fakhraei",
+                "given": "Reza"
+            },
+            {
+                "family": "Song",
+                "given": "Yang"
+            },
+            {
+                "family": "Kazi",
+                "given": "Dhruv S."
+            },
+            {
+                "family": "Wadhera",
+                "given": "Rishi K."
+            },
+            {
+                "family": "Lemos",
+                "given": "James A."
+            },
+            {
+                "family": "Das",
+                "given": "Sandeep R."
+            },
+            {
+                "family": "Morrow",
+                "given": "David A."
+            },
+            {
+                "family": "Dahabreh",
+                "given": "Issa J."
+            },
+            {
+                "family": "Rutan",
+                "given": "Christine M."
+            },
+            {
+                "family": "Thomas",
+                "given": "Kathie"
+            },
+            {
+                "family": "Yeh",
+                "given": "Robert W."
+            }
+        ],
+        "container-title": "Journal of the American Heart Association",
+        "container-title-short": "J Am Heart Assoc",
+        "id": "fakhraei2025",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2025,
+                    4
+                ]
+            ]
+        },
+        "key": "7R7V3RPP",
+        "libraryid": "1",
+        "page": "e038073",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Wiley",
+        "source": "ahajournals.org (Atypon)",
+        "title": "Social vulnerability and long‐term cardiovascular outcomes after COVID‐19 hospitalization: An analysis of the American Heart Association COVID‐19 Registry linked with Medicare claims data",
+        "title-short": "Social vulnerability and long‐term cardiovascular outcomes after COVID‐19 hospitalization",
+        "type": "article-journal",
+        "volume": "14"
+    },
+    {
+        "URL": "https://www.census.gov/data/tables/time-series/dec/density-data-text.html",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    1,
+                    3
+                ]
+            ]
+        },
+        "container-title": "U.S. Census Bureau",
+        "id": "censuspop2021",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "key": "JVNUDFIF",
+        "language": "en",
+        "libraryid": "1",
+        "note": "Citation Key: census_pop2021",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "section": "Government",
+        "title": "Historical population density data (1910-2020)",
+        "type": "webpage"
+    },
+    {
+        "DOI": "10.1016/j.jagp.2020.08.006",
+        "ISSN": "1064-7481",
+        "URL": "https://www.sciencedirect.com/science/article/pii/S1064748120304449",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    11,
+                    6
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Pietrzak",
+                "given": "Robert H."
+            },
+            {
+                "family": "Levy",
+                "given": "Becca R."
+            },
+            {
+                "family": "Tsai",
+                "given": "Jack"
+            },
+            {
+                "family": "Southwick",
+                "given": "Steven M."
+            }
+        ],
+        "container-title": "The American Journal of Geriatric Psychiatry",
+        "container-title-short": "Am J Geriatr Psychiatry",
+        "id": "pietrzak2021",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    3,
+                    1
+                ]
+            ]
+        },
+        "key": "UTRE9UYH",
+        "libraryid": "1",
+        "page": "251-256",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "ScienceDirect",
+        "title": "Successful aging in older US veterans: Results from the 2019–2020 National Health and Resilience in Veterans Study",
+        "title-short": "Successful aging in older US veterans",
+        "type": "article-journal",
+        "volume": "29"
+    },
+    {
+        "DOI": "10.3390/healthcare9050604",
+        "ISSN": "2227-9032",
+        "URL": "https://www.mdpi.com/2227-9032/9/5/604",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    11,
+                    6
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Betancourt",
+                "given": "Jose A."
+            },
+            {
+                "family": "Granados",
+                "given": "Paula Stigler"
+            },
+            {
+                "family": "Pacheco",
+                "given": "Gerardo J."
+            },
+            {
+                "family": "Reagan",
+                "given": "Julie"
+            },
+            {
+                "family": "Shanmugam",
+                "given": "Ramalingam"
+            },
+            {
+                "family": "Topinka",
+                "given": "Joseph B."
+            },
+            {
+                "family": "Beauvais",
+                "given": "Bradley M."
+            },
+            {
+                "family": "Ramamonjiarivelo",
+                "given": "Zo H."
+            },
+            {
+                "family": "Fulton",
+                "given": "Lawrence V."
+            }
+        ],
+        "container-title": "Healthcare",
+        "id": "betancourt2021",
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    5
+                ]
+            ]
+        },
+        "key": "CUJ4YQKY",
+        "language": "en",
+        "libraryid": "1",
+        "page": "604",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Multidisciplinary",
+        "rights": "http://creativecommons.org/licenses/by/3.0/",
+        "source": "www.mdpi.com",
+        "title": "Exploring health outcomes for U.S. veterans compared to non-veterans from 2003 to 2019",
+        "type": "article-journal",
+        "volume": "9"
+    },
+    {
+        "DOI": "10.1093/ofid/ofac641",
+        "ISSN": "2328-8957",
+        "URL": "https://doi.org/10.1093/ofid/ofac641",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    3,
+                    1
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Harley",
+                "given": "John B"
+            },
+            {
+                "family": "Pyarajan",
+                "given": "Saiju"
+            },
+            {
+                "family": "Partan",
+                "given": "Elizabeth S"
+            },
+            {
+                "family": "Epstein",
+                "given": "Lauren"
+            },
+            {
+                "family": "Wertheim",
+                "given": "Jason A"
+            },
+            {
+                "family": "Diwan",
+                "given": "Abhinav"
+            },
+            {
+                "family": "Woods",
+                "given": "Christopher W"
+            },
+            {
+                "family": "Davey",
+                "given": "Victoria"
+            },
+            {
+                "family": "Blair",
+                "given": "Sharlene"
+            },
+            {
+                "family": "Clark",
+                "given": "Dennis H"
+            },
+            {
+                "family": "Kaufman",
+                "given": "Kenneth M"
+            },
+            {
+                "family": "Khan",
+                "given": "Shagufta"
+            },
+            {
+                "family": "Chepelev",
+                "given": "Iouri"
+            },
+            {
+                "family": "Devine",
+                "given": "Alexander"
+            },
+            {
+                "family": "Cameron",
+                "given": "Perry"
+            },
+            {
+                "family": "McCann",
+                "given": "Monica F"
+            },
+            {
+                "family": "Ammons",
+                "given": "Mary Cloud B"
+            },
+            {
+                "family": "Bolz",
+                "given": "Devin D"
+            },
+            {
+                "family": "Battles",
+                "given": "Jane K"
+            },
+            {
+                "family": "Curtis",
+                "given": "Jeffrey L"
+            },
+            {
+                "family": "Holodniy",
+                "given": "Mark"
+            },
+            {
+                "family": "Marconi",
+                "given": "Vincent C"
+            },
+            {
+                "family": "Searles",
+                "given": "Charles D"
+            },
+            {
+                "family": "Beenhouwer",
+                "given": "David O"
+            },
+            {
+                "family": "Brown",
+                "given": "Sheldon T"
+            },
+            {
+                "family": "Moorman",
+                "given": "Jonathan P"
+            },
+            {
+                "family": "Yao",
+                "given": "Zhi Q"
+            },
+            {
+                "family": "Rodriguez-Barradas",
+                "given": "Maria C"
+            },
+            {
+                "family": "Mohapatra",
+                "given": "Shyam"
+            },
+            {
+                "family": "Molina De Rodriguez",
+                "given": "Osmara Y"
+            },
+            {
+                "family": "Padiernos",
+                "given": "Emerson B"
+            },
+            {
+                "family": "McIndoo",
+                "given": "Eric R"
+            },
+            {
+                "family": "Price",
+                "given": "Emily"
+            },
+            {
+                "family": "Burgoyne",
+                "given": "Hailey M"
+            },
+            {
+                "family": "Robey",
+                "given": "Ian"
+            },
+            {
+                "family": "Schwenke",
+                "given": "Dawn C"
+            },
+            {
+                "family": "Shive",
+                "given": "Carey L"
+            },
+            {
+                "family": "Przygodzki",
+                "given": "Ronald M"
+            },
+            {
+                "family": "Ramoni",
+                "given": "Rachel B"
+            },
+            {
+                "family": "Krull",
+                "given": "Holly K"
+            },
+            {
+                "family": "Bonomo",
+                "given": "Robert A"
+            }
+        ],
+        "container-title": "Open Forum Infectious Diseases",
+        "container-title-short": "Open Forum Infect Dis",
+        "id": "harley2022",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    12,
+                    1
+                ]
+            ]
+        },
+        "key": "BVDR2WSU",
+        "libraryid": "1",
+        "page": "ofac641",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "The US Department of Veterans Affairs Science and Health Initiative to Combat Infectious and Emerging Life-Threatening Diseases (VA SHEILD): A biorepository addressing national health threats",
+        "title-short": "The us department of veterans affairs science and health initiative to combat infectious and emerging life-threatening diseases (va shield)",
+        "type": "article-journal",
+        "volume": "9"
+    },
+    {
+        "DOI": "10.12788/fp.0417",
+        "author": [
+            {
+                "family": "Krishnan",
+                "given": "Jay"
+            }
+        ],
+        "container-title": "Federal Practitioner",
+        "container-title-short": "Fed Pract",
+        "id": "krishnan2023",
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "key": "7Z9ZTI3F",
+        "libraryid": "1",
+        "page": "S44-S47",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Nationwide genomic surveillance and response to COVID-19: The VA SeqFORCE and SeqCURE consortiums",
+        "type": "article-journal",
+        "volume": "40"
+    },
+    {
+        "DOI": "10.12788/fp.0424",
+        "ISSN": "1078-4497",
+        "PMCID": "PMC10988618",
+        "PMID": "38577305",
+        "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10988618/",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    2
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Epstein",
+                "given": "Lauren"
+            },
+            {
+                "family": "Shive",
+                "given": "Carey"
+            },
+            {
+                "family": "Garcia",
+                "given": "Amanda P."
+            },
+            {
+                "family": "Pyarajan",
+                "given": "Saiju"
+            },
+            {
+                "family": "Partan",
+                "given": "Elizabeth S."
+            },
+            {
+                "family": "Battles",
+                "given": "Jane K."
+            },
+            {
+                "family": "Krull",
+                "given": "Holly K."
+            },
+            {
+                "family": "Bonomo",
+                "given": "Robert A."
+            }
+        ],
+        "container-title": "Federal Practitioner",
+        "container-title-short": "Fed Pract",
+        "id": "epstein2023",
+        "issue": "11 Suppl 5",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    11
+                ]
+            ]
+        },
+        "key": "EDTDM8CF",
+        "libraryid": "1",
+        "page": "S48-S51",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "PubMed Central",
+        "title": "VA SHIELD: A biorepository for veterans and the nation",
+        "title-short": "VA SHIELD",
+        "type": "article-journal",
+        "volume": "40"
+    },
+    {
+        "URL": "https://www.hsrd.research.va.gov/for_researchers/cdw.cfm",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    8
+                ]
+            ]
+        },
+        "container-title": "U.S. Department of Veterans Affairs Health Systems Research",
+        "id": "VACDW2023",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "key": "C25XUJSH",
+        "language": "en",
+        "libraryid": "1",
+        "note": "Citation Key: VA_CDW2023",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Corporate data warehouse (CDW)",
+        "type": "webpage"
+    },
+    {
+        "URL": "https://www.cdc.gov/nchs/data_access/urban_rural.htm",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    8
+                ]
+            ]
+        },
+        "container-title": "U.S. Centers for Disease Control and Prevention National Center for Health Statistics",
+        "id": "NCHS2013",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "key": "CBAQRUC8",
+        "language": "en-us",
+        "libraryid": "1",
+        "note": "Citation Key: NCHS_2013",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "NCHS urban-rural classification scheme for counties",
+        "type": "webpage"
+    },
+    {
+        "URL": "https://www.atsdr.cdc.gov/placeandhealth/svi/index.html",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    8
+                ]
+            ]
+        },
+        "container-title": "U.S. Centers for Disease Control and Prevention Agency for Toxic Substances and Disease Registry",
+        "id": "cdcsvi2022",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "key": "PZGTQAYC",
+        "language": "en-us",
+        "libraryid": "1",
+        "note": "Citation Key: cdc_svi2022",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Social vulnerability index",
+        "type": "webpage"
+    },
+    {
+        "DOI": "10.21105/joss.03773",
+        "ISSN": "2475-9066",
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03773",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    7,
+                    23
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Aksamentov",
+                "given": "Ivan"
+            },
+            {
+                "family": "Roemer",
+                "given": "Cornelius"
+            },
+            {
+                "family": "Hodcroft",
+                "given": "Emma B."
+            },
+            {
+                "family": "Neher",
+                "given": "Richard A."
+            }
+        ],
+        "container-title": "Journal of Open Source Software",
+        "container-title-short": "J Open Source Softw",
+        "id": "aksamentov2021",
+        "issue": "67",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    11,
+                    30
+                ]
+            ]
+        },
+        "key": "RCC24FDS",
+        "language": "en",
+        "libraryid": "1",
+        "page": "3773",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "joss.theoj.org",
+        "title": "Nextclade: Clade assignment, mutation calling and quality control for viral genomes",
+        "title-short": "Nextclade",
+        "type": "article-journal",
+        "volume": "6"
+    },
+    {
+        "DOI": "10.15386/mpr-2340",
+        "ISSN": "2668-0572",
+        "URL": "https://medpharmareports.com/index.php/mpr/article/view/2340",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    2,
+                    17
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Bogariu",
+                "given": "Alina M."
+            },
+            {
+                "family": "Dumitrascu",
+                "given": "Dan L."
+            }
+        ],
+        "container-title": "Medicine and Pharmacy Reports",
+        "container-title-short": "Med Pharm Rep",
+        "id": "bogariu2022",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "key": "GTXVPVFI",
+        "language": "en-US",
+        "libraryid": "1",
+        "page": "5-10",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "medpharmareports.com",
+        "title": "Digestive involvement in the Long-COVID syndrome",
+        "type": "article-journal",
+        "volume": "95"
+    },
+    {
+        "DOI": "10.1113/EP090802",
+        "ISSN": "1469-445X",
+        "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1113/EP090802",
+        "_eprint": "https://onlinelibrary.wiley.com/doi/pdf/10.1113/EP090802",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Astin",
+                "given": "Rónan"
+            },
+            {
+                "family": "Banerjee",
+                "given": "Amitava"
+            },
+            {
+                "family": "Baker",
+                "given": "Mark R."
+            },
+            {
+                "family": "Dani",
+                "given": "Melanie"
+            },
+            {
+                "family": "Ford",
+                "given": "Elizabeth"
+            },
+            {
+                "family": "Hull",
+                "given": "James H."
+            },
+            {
+                "family": "Lim",
+                "given": "Phang Boon"
+            },
+            {
+                "family": "McNarry",
+                "given": "Melitta"
+            },
+            {
+                "family": "Morten",
+                "given": "Karl"
+            },
+            {
+                "family": "O’Sullivan",
+                "given": "Oliver"
+            },
+            {
+                "family": "Pretorius",
+                "given": "Etheresia"
+            },
+            {
+                "family": "Raman",
+                "given": "Betty"
+            },
+            {
+                "family": "Soteropoulos",
+                "given": "Demetris S."
+            },
+            {
+                "family": "Taquet",
+                "given": "Maxime"
+            },
+            {
+                "family": "Hall",
+                "given": "Catherine N."
+            }
+        ],
+        "container-title": "Experimental Physiology",
+        "container-title-short": "Exp Physiol",
+        "id": "astin2023",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "key": "MZHXUSNA",
+        "language": "en",
+        "libraryid": "1",
+        "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1113/EP090802",
+        "page": "12-27",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "rights": "© 2022 The Authors. Experimental Physiology published by John Wiley & Sons Ltd on behalf of The Physiological Society.",
+        "source": "Wiley Online Library",
+        "title": "Long COVID: mechanisms, risk factors and recovery",
+        "title-short": "Long COVID",
+        "type": "article-journal",
+        "volume": "108"
+    },
+    {
+        "DOI": "10.1016/j.cgh.2022.05.044",
+        "ISSN": "1542-3565",
+        "URL": "https://www.sciencedirect.com/science/article/pii/S1542356522006012",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Chan",
+                "given": "Walter W."
+            },
+            {
+                "family": "Grover",
+                "given": "Madhusudan"
+            }
+        ],
+        "container-title": "Clinical Gastroenterology and Hepatology",
+        "container-title-short": "J Clin Gastroenterol Hepatol",
+        "id": "chan2022",
+        "issue": "10",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    10,
+                    1
+                ]
+            ]
+        },
+        "key": "ZEDGKSLS",
+        "libraryid": "1",
+        "page": "2195-2197",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "ScienceDirect",
+        "title": "The COVID-19 pandemic and Post-Infection Irritable Bowel Syndrome: What lies ahead for gastroenterologists",
+        "title-short": "The COVID-19 Pandemic and Post-Infection Irritable Bowel Syndrome",
+        "type": "article-journal",
+        "volume": "20"
+    },
+    {
+        "DOI": "10.3892/etm.2022.11290",
+        "ISSN": "1792-0981",
+        "URL": "https://www.spandidos-publications.com/10.3892/etm.2022.11290",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Efstathiou",
+                "given": "Vasiliki"
+            },
+            {
+                "family": "Stefanou",
+                "given": "Maria-Ioanna"
+            },
+            {
+                "family": "Demetriou",
+                "given": "Marina"
+            },
+            {
+                "family": "Siafakas",
+                "given": "Nikolaos"
+            },
+            {
+                "family": "Makris",
+                "given": "Michael"
+            },
+            {
+                "family": "Tsivgoulis",
+                "given": "Georgios"
+            },
+            {
+                "family": "Zoumpourlis",
+                "given": "Vassilios"
+            },
+            {
+                "family": "Kympouropoulos",
+                "given": "Stylianos P."
+            },
+            {
+                "family": "Tsoporis",
+                "given": "James N."
+            },
+            {
+                "family": "Spandidos",
+                "given": "Demetrios A."
+            },
+            {
+                "family": "Smyrnis",
+                "given": "Nikolaos"
+            },
+            {
+                "family": "Rizos",
+                "given": "Emmanouil"
+            }
+        ],
+        "container-title": "Experimental and Therapeutic Medicine",
+        "container-title-short": "Exp Ther Med",
+        "id": "efstathiou2022",
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    5,
+                    1
+                ]
+            ]
+        },
+        "key": "E2FC224M",
+        "libraryid": "1",
+        "page": "1-12",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Spandidos",
+        "source": "www.spandidos-publications.com",
+        "title": "Long COVID and neuropsychiatric manifestations (Review)",
+        "type": "article-journal",
+        "volume": "23"
+    },
+    {
+        "DOI": "10.1093/ofid/ofad277",
+        "ISSN": "2328-8957",
+        "URL": "https://doi.org/10.1093/ofid/ofad277",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    2,
+                    17
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Gottlieb",
+                "given": "Michael"
+            },
+            {
+                "family": "Spatz",
+                "given": "Erica S"
+            },
+            {
+                "family": "Yu",
+                "given": "Huihui"
+            },
+            {
+                "family": "Wisk",
+                "given": "Lauren E"
+            },
+            {
+                "family": "Elmore",
+                "given": "Joann G"
+            },
+            {
+                "family": "Gentile",
+                "given": "Nicole L"
+            },
+            {
+                "family": "Hill",
+                "given": "Mandy"
+            },
+            {
+                "family": "Huebinger",
+                "given": "Ryan M"
+            },
+            {
+                "family": "Idris",
+                "given": "Ahamed H"
+            },
+            {
+                "family": "Kean",
+                "given": "Efrat R"
+            },
+            {
+                "family": "Koo",
+                "given": "Katherine"
+            },
+            {
+                "family": "Li",
+                "given": "Shu-Xia"
+            },
+            {
+                "family": "McDonald",
+                "given": "Samuel"
+            },
+            {
+                "family": "Montoy",
+                "given": "Juan Carlos C"
+            },
+            {
+                "family": "Nichol",
+                "given": "Graham"
+            },
+            {
+                "family": "O’Laughlin",
+                "given": "Kelli N"
+            },
+            {
+                "family": "Plumb",
+                "given": "Ian D"
+            },
+            {
+                "family": "Rising",
+                "given": "Kristin L"
+            },
+            {
+                "family": "Santangelo",
+                "given": "Michelle"
+            },
+            {
+                "family": "Saydah",
+                "given": "Sharon"
+            },
+            {
+                "family": "Wang",
+                "given": "Ralph C"
+            },
+            {
+                "family": "Venkatesh",
+                "given": "Arjun"
+            },
+            {
+                "family": "Stephens",
+                "given": "Kari A"
+            },
+            {
+                "family": "Weinstein",
+                "given": "Robert A"
+            },
+            {
+                "family": "INSPIRE Group"
+            }
+        ],
+        "container-title": "Open Forum Infectious Diseases",
+        "container-title-short": "Open Forum Infect Dis",
+        "id": "gottlieb2023",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    7,
+                    1
+                ]
+            ]
+        },
+        "key": "NR3PI6CP",
+        "libraryid": "1",
+        "page": "1-12",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "Long COVID clinical phenotypes up to 6 months after infection identified by latent class analysis of self-reported symptoms",
+        "type": "article-journal",
+        "volume": "10"
+    },
+    {
+        "DOI": "10.2147/POR.S316186",
+        "ISSN": "null",
+        "URL": "https://www.tandfonline.com/doi/abs/10.2147/POR.S316186",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    2,
+                    18
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Jones",
+                "given": "Rupert"
+            },
+            {
+                "family": "Davis",
+                "given": "Andrew"
+            },
+            {
+                "family": "Stanley",
+                "given": "Brooklyn"
+            },
+            {
+                "family": "Julious",
+                "given": "Steven"
+            },
+            {
+                "family": "Ryan",
+                "given": "Dermot"
+            },
+            {
+                "family": "Jackson",
+                "given": "David J"
+            },
+            {
+                "family": "Halpin",
+                "given": "David M G"
+            },
+            {
+                "family": "Hickman",
+                "given": "Katherine"
+            },
+            {
+                "family": "Pinnock",
+                "given": "Hilary"
+            },
+            {
+                "family": "Quint",
+                "given": "Jennifer K"
+            },
+            {
+                "family": "Khunti",
+                "given": "Kamlesh"
+            },
+            {
+                "family": "Heaney",
+                "given": "Liam G"
+            },
+            {
+                "family": "Oliver",
+                "given": "Phillip"
+            },
+            {
+                "family": "Siddiqui",
+                "given": "Salman"
+            },
+            {
+                "family": "Pavord",
+                "given": "Ian"
+            },
+            {
+                "family": "Jones",
+                "given": "David H M"
+            },
+            {
+                "family": "Hyland",
+                "given": "Michael"
+            },
+            {
+                "family": "Ritchie",
+                "given": "Lewis"
+            },
+            {
+                "family": "Young",
+                "given": "Pam"
+            },
+            {
+                "family": "Megaw",
+                "given": "Tony"
+            },
+            {
+                "family": "Davis",
+                "given": "Steve"
+            },
+            {
+                "family": "Walker",
+                "given": "Samantha"
+            },
+            {
+                "family": "Holgate",
+                "given": "Stephen"
+            },
+            {
+                "family": "Beecroft",
+                "given": "Sue"
+            },
+            {
+                "family": "Kemppinen",
+                "given": "Anu"
+            },
+            {
+                "family": "Appiagyei",
+                "given": "Francis"
+            },
+            {
+                "family": "Roberts",
+                "given": "Emma-Jane"
+            },
+            {
+                "family": "Preston",
+                "given": "Megan"
+            },
+            {
+                "family": "Hardjojo",
+                "given": "Antony"
+            },
+            {
+                "family": "Carter",
+                "given": "Victoria"
+            },
+            {
+                "family": "Melle",
+                "given": "Marije"
+            },
+            {
+                "family": "Price",
+                "given": "David"
+            }
+        ],
+        "container-title": "Pragmatic and Observational Research",
+        "container-title-short": "Pragmat Obs Res",
+        "id": "jones2021",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    8,
+                    11
+                ]
+            ]
+        },
+        "key": "HAB74HAN",
+        "libraryid": "1",
+        "medical press\n_eprint": "https://www.tandfonline.com/doi/pdf/10.2147/POR.S316186",
+        "note": "_eprint: https://www.tandfonline.com/doi/pdf/10.2147/POR.S316186",
+        "page": "93-104",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Dove",
+        "source": "Taylor and Francis+NEJM",
+        "title": "Risk predictors and symptom features of Long COVID within a broad primary care patient population including both tested and untested patients",
+        "type": "article-journal",
+        "volume": "12"
+    },
+    {
+        "DOI": "10.1097/CRD.0000000000000552",
+        "ISSN": "1061-5377",
+        "URL": "https://journals.lww.com/cardiologyinreview/abstract/9900/cardiovascular_manifestations_of_the_long_covid.97.aspx",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Lorente-Ros",
+                "given": "Marta"
+            },
+            {
+                "family": "Das",
+                "given": "Subrat"
+            },
+            {
+                "family": "Elias",
+                "given": "Joseph"
+            },
+            {
+                "family": "Frishman",
+                "given": "William H."
+            },
+            {
+                "family": "Aronow",
+                "given": "Wilbert S."
+            }
+        ],
+        "container-title": "Cardiology in Review",
+        "container-title-short": "Cardiol Rev",
+        "id": "lorente-ros2023",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "key": "KDM9HAZ7",
+        "language": "en-US",
+        "libraryid": "1",
+        "page": "10.1097/CRD.0000000000000552",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "journals.lww.com",
+        "title": "Cardiovascular manifestations of the Long COVID Syndrome",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1097/SGA.0000000000000676",
+        "ISSN": "1042-895X",
+        "URL": "https://journals.lww.com/gastroenterologynursing/abstract/2022/07000/gastrointestinal_bleeding_in_covid_19_patients__a.7.aspx?context=latestarticles",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Negro",
+                "given": "Alessandra"
+            },
+            {
+                "family": "Villa",
+                "given": "Giulia"
+            },
+            {
+                "family": "Rolandi",
+                "given": "Stefano"
+            },
+            {
+                "family": "Lucchini",
+                "given": "Alberto"
+            },
+            {
+                "family": "Bambi",
+                "given": "Stefano"
+            }
+        ],
+        "container-title": "Gastroenterology Nursing",
+        "container-title-short": "Gastroenterol Nurs",
+        "id": "negro2022",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    8
+                ]
+            ]
+        },
+        "key": "YWKABIMK",
+        "language": "en-US",
+        "libraryid": "1",
+        "page": "267",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "journals.lww.com",
+        "title": "Gastrointestinal bleeding in COVID-19 patients: A rapid review",
+        "title-short": "Gastrointestinal Bleeding in COVID-19 Patients",
+        "type": "article-journal",
+        "volume": "45"
+    },
+    {
+        "DOI": "10.1186/s12916-023-02737-6",
+        "ISSN": "1741-7015 (Electronic) 1741-7015 (Linking)",
+        "PMCID": "PMC9931566",
+        "author": [
+            {
+                "family": "Pfaff",
+                "given": "E. R."
+            },
+            {
+                "family": "Madlock-Brown",
+                "given": "C."
+            },
+            {
+                "family": "Baratta",
+                "given": "J. M."
+            },
+            {
+                "family": "Bhatia",
+                "given": "A."
+            },
+            {
+                "family": "Davis",
+                "given": "H."
+            },
+            {
+                "family": "Girvin",
+                "given": "A."
+            },
+            {
+                "family": "Hill",
+                "given": "E."
+            },
+            {
+                "family": "Kelly",
+                "given": "E."
+            },
+            {
+                "family": "Kostka",
+                "given": "K."
+            },
+            {
+                "family": "Loomba",
+                "given": "J."
+            },
+            {
+                "family": "McMurry",
+                "given": "J. A."
+            },
+            {
+                "family": "Wong",
+                "given": "R."
+            },
+            {
+                "family": "Bennett",
+                "given": "T. D."
+            },
+            {
+                "family": "Moffitt",
+                "given": "R."
+            },
+            {
+                "family": "Chute",
+                "given": "C. G."
+            },
+            {
+                "family": "Haendel",
+                "given": "M."
+            },
+            {
+                "family": "N. C. Consortium"
+            },
+            {
+                "family": "Recover Consortium"
+            }
+        ],
+        "container-title": "BMC Medicine",
+        "container-title-short": "BMC Med",
+        "id": "pfaff2023",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    2,
+                    16
+                ]
+            ]
+        },
+        "key": "NSL3X8S9",
+        "libraryid": "1",
+        "page": "1-13",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Coding long COVID: Characterizing a new disease through an ICD-10 lens",
+        "type": "article-journal",
+        "volume": "21"
+    },
+    {
+        "ISSN": "1942-597X",
+        "PMCID": "PMC10785914",
+        "PMID": "38222385",
+        "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10785914/",
+        "author": [
+            {
+                "family": "Pungitore",
+                "given": "Sarah"
+            },
+            {
+                "family": "Olorunnisola",
+                "given": "Toluwanimi"
+            },
+            {
+                "family": "Mosier",
+                "given": "Jarrod"
+            },
+            {
+                "family": "Subbian",
+                "given": "Vignesh"
+            }
+        ],
+        "container-title": "AMIA Annual Symposium Proceedings",
+        "container-title-short": "AMIA Annu Symp Proc",
+        "id": "pungitore2024",
+        "issued": {
+            "date-parts": [
+                [
+                    2024,
+                    1,
+                    11
+                ]
+            ]
+        },
+        "key": "E3L5FMRC",
+        "libraryid": "1",
+        "page": "589-598",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "PubMed Central",
+        "title": "Computable phenotypes for Post-Acute Sequelae of SARS-CoV-2: A National COVID Cohort Collaborative analysis",
+        "title-short": "Computable Phenotypes for Post-acute sequelae of SARS-CoV-2",
+        "type": "article-journal",
+        "volume": "2023"
+    },
+    {
+        "DOI": "10.5662/wjm.v13.i4.323",
+        "ISSN": "2222-0682",
+        "PMCID": "PMC10523249",
+        "PMID": "37771866",
+        "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10523249/",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Sherif",
+                "given": "Zaki A"
+            },
+            {
+                "family": "Deverapalli",
+                "given": "Mrinalini"
+            },
+            {
+                "family": "Challa",
+                "given": "Suryanarayana Reddy"
+            },
+            {
+                "family": "Martirosyan",
+                "given": "Zara"
+            },
+            {
+                "family": "Whitesell",
+                "given": "Peter"
+            },
+            {
+                "family": "Pizuorno",
+                "given": "Antonio Machado"
+            },
+            {
+                "family": "Naqvi",
+                "given": "Zainab"
+            },
+            {
+                "family": "Tulloch",
+                "given": "Ingrid K"
+            },
+            {
+                "family": "Oskrochi",
+                "given": "Gholamreza"
+            },
+            {
+                "family": "Brim",
+                "given": "Hassan"
+            },
+            {
+                "family": "Ashktorab",
+                "given": "Hassan"
+            }
+        ],
+        "container-title": "World Journal of Methodology",
+        "container-title-short": "World J Methodol",
+        "id": "sherif2023",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    9,
+                    20
+                ]
+            ]
+        },
+        "key": "58PDG8W8",
+        "libraryid": "1",
+        "page": "323-336",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "PubMed Central",
+        "title": "Potential long-term neurological and gastrointestinal effects of COVID-19: A review of adult cohorts",
+        "title-short": "Potential long-term neurological and gastrointestinal effects of COVID-19",
+        "type": "article-journal",
+        "volume": "13"
+    },
+    {
+        "DOI": "10.1038/s41591-022-01909-w",
+        "ISSN": "1546-170X",
+        "URL": "https://www.nature.com/articles/s41591-022-01909-w",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Subramanian",
+                "given": "Anuradhaa"
+            },
+            {
+                "family": "Nirantharakumar",
+                "given": "Krishnarajah"
+            },
+            {
+                "family": "Hughes",
+                "given": "Sarah"
+            },
+            {
+                "family": "Myles",
+                "given": "Puja"
+            },
+            {
+                "family": "Williams",
+                "given": "Tim"
+            },
+            {
+                "family": "Gokhale",
+                "given": "Krishna M."
+            },
+            {
+                "family": "Taverner",
+                "given": "Tom"
+            },
+            {
+                "family": "Chandan",
+                "given": "Joht Singh"
+            },
+            {
+                "family": "Brown",
+                "given": "Kirsty"
+            },
+            {
+                "family": "Simms-Williams",
+                "given": "Nikita"
+            },
+            {
+                "family": "Shah",
+                "given": "Anoop D."
+            },
+            {
+                "family": "Singh",
+                "given": "Megha"
+            },
+            {
+                "family": "Kidy",
+                "given": "Farah"
+            },
+            {
+                "family": "Okoth",
+                "given": "Kelvin"
+            },
+            {
+                "family": "Hotham",
+                "given": "Richard"
+            },
+            {
+                "family": "Bashir",
+                "given": "Nasir"
+            },
+            {
+                "family": "Cockburn",
+                "given": "Neil"
+            },
+            {
+                "family": "Lee",
+                "given": "Siang Ing"
+            },
+            {
+                "family": "Turner",
+                "given": "Grace M."
+            },
+            {
+                "family": "Gkoutos",
+                "given": "Georgios V."
+            },
+            {
+                "family": "Aiyegbusi",
+                "given": "Olalekan Lee"
+            },
+            {
+                "family": "McMullan",
+                "given": "Christel"
+            },
+            {
+                "family": "Denniston",
+                "given": "Alastair K."
+            },
+            {
+                "family": "Sapey",
+                "given": "Elizabeth"
+            },
+            {
+                "family": "Lord",
+                "given": "Janet M."
+            },
+            {
+                "family": "Wraith",
+                "given": "David C."
+            },
+            {
+                "family": "Leggett",
+                "given": "Edward"
+            },
+            {
+                "family": "Iles",
+                "given": "Clare"
+            },
+            {
+                "family": "Marshall",
+                "given": "Tom"
+            },
+            {
+                "family": "Price",
+                "given": "Malcolm J."
+            },
+            {
+                "family": "Marwaha",
+                "given": "Steven"
+            },
+            {
+                "family": "Davies",
+                "given": "Elin Haf"
+            },
+            {
+                "family": "Jackson",
+                "given": "Louise J."
+            },
+            {
+                "family": "Matthews",
+                "given": "Karen L."
+            },
+            {
+                "family": "Camaradou",
+                "given": "Jenny"
+            },
+            {
+                "family": "Calvert",
+                "given": "Melanie"
+            },
+            {
+                "family": "Haroon",
+                "given": "Shamil"
+            }
+        ],
+        "container-title": "Nature Medicine",
+        "container-title-short": "Nat Med",
+        "id": "subramanian2022",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    8
+                ]
+            ]
+        },
+        "key": "5LX8PJT8",
+        "language": "en",
+        "libraryid": "1",
+        "page": "1706-1714",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Nature",
+        "rights": "2022 The Author(s)",
+        "source": "www.nature.com",
+        "title": "Symptoms and risk factors for long COVID in non-hospitalized adults",
+        "type": "article-journal",
+        "volume": "28"
+    },
+    {
+        "DOI": "10.1001/jama.2023.8823",
+        "ISSN": "1538-3598 (Electronic) 0098-7484 (Print) 0098-7484 (Linking)",
+        "PMCID": "PMC10214179",
+        "author": [
+            {
+                "family": "Thaweethai",
+                "given": "T."
+            },
+            {
+                "family": "Jolley",
+                "given": "S. E."
+            },
+            {
+                "family": "Karlson",
+                "given": "E. W."
+            },
+            {
+                "family": "Levitan",
+                "given": "E. B."
+            },
+            {
+                "family": "Levy",
+                "given": "B."
+            },
+            {
+                "family": "McComsey",
+                "given": "G. A."
+            },
+            {
+                "family": "McCorkell",
+                "given": "L."
+            },
+            {
+                "family": "Nadkarni",
+                "given": "G. N."
+            },
+            {
+                "family": "Parthasarathy",
+                "given": "S."
+            },
+            {
+                "family": "Singh",
+                "given": "U."
+            },
+            {
+                "family": "Walker",
+                "given": "T. A."
+            },
+            {
+                "family": "Selvaggi",
+                "given": "C. A."
+            },
+            {
+                "family": "Shinnick",
+                "given": "D. J."
+            },
+            {
+                "family": "Schulte",
+                "given": "C. C. M."
+            },
+            {
+                "family": "Atchley-Challenner",
+                "given": "R."
+            },
+            {
+                "family": "Alba",
+                "given": "G. A."
+            },
+            {
+                "family": "Alicic",
+                "given": "R."
+            },
+            {
+                "family": "Altman",
+                "given": "N."
+            },
+            {
+                "family": "Anglin",
+                "given": "K."
+            },
+            {
+                "family": "Argueta",
+                "given": "U."
+            },
+            {
+                "family": "Ashktorab",
+                "given": "H."
+            },
+            {
+                "family": "Baslet",
+                "given": "G."
+            },
+            {
+                "family": "Bassett",
+                "given": "I. V."
+            },
+            {
+                "family": "Bateman",
+                "given": "L."
+            },
+            {
+                "family": "Bedi",
+                "given": "B."
+            },
+            {
+                "family": "Bhattacharyya",
+                "given": "S."
+            },
+            {
+                "family": "Bind",
+                "given": "M. A."
+            },
+            {
+                "family": "Blomkalns",
+                "given": "A. L."
+            },
+            {
+                "family": "Bonilla",
+                "given": "H."
+            },
+            {
+                "family": "Bush",
+                "given": "P. A."
+            },
+            {
+                "family": "Castro",
+                "given": "M."
+            },
+            {
+                "family": "Chan",
+                "given": "J."
+            },
+            {
+                "family": "Charney",
+                "given": "A. W."
+            },
+            {
+                "family": "Chen",
+                "given": "P."
+            },
+            {
+                "family": "Chibnik",
+                "given": "L. B."
+            },
+            {
+                "family": "Chu",
+                "given": "H. Y."
+            },
+            {
+                "family": "Clifton",
+                "given": "R. G."
+            },
+            {
+                "family": "Costantine",
+                "given": "M. M."
+            },
+            {
+                "family": "Cribbs",
+                "given": "S. K."
+            },
+            {
+                "family": "Davila Nieves",
+                "given": "S. I."
+            },
+            {
+                "family": "Deeks",
+                "given": "S. G."
+            },
+            {
+                "family": "Duven",
+                "given": "A."
+            },
+            {
+                "family": "Emery",
+                "given": "I. F."
+            },
+            {
+                "family": "Erdmann",
+                "given": "N."
+            },
+            {
+                "family": "Erlandson",
+                "given": "K. M."
+            },
+            {
+                "family": "Ernst",
+                "given": "K. C."
+            },
+            {
+                "family": "Farah-Abraham",
+                "given": "R."
+            },
+            {
+                "family": "Farner",
+                "given": "C. E."
+            },
+            {
+                "family": "Feuerriegel",
+                "given": "E. M."
+            },
+            {
+                "family": "Fleurimont",
+                "given": "J."
+            },
+            {
+                "family": "Fonseca",
+                "given": "V."
+            },
+            {
+                "family": "Franko",
+                "given": "N."
+            },
+            {
+                "family": "Gainer",
+                "given": "V."
+            },
+            {
+                "family": "Gander",
+                "given": "J. C."
+            },
+            {
+                "family": "Gardner",
+                "given": "E. M."
+            },
+            {
+                "family": "Geng",
+                "given": "L. N."
+            },
+            {
+                "family": "Gibson",
+                "given": "K. S."
+            },
+            {
+                "family": "Go",
+                "given": "M."
+            },
+            {
+                "family": "Goldman",
+                "given": "J. D."
+            },
+            {
+                "family": "Grebe",
+                "given": "H."
+            },
+            {
+                "family": "Greenway",
+                "given": "F. L."
+            },
+            {
+                "family": "Habli",
+                "given": "M."
+            },
+            {
+                "family": "Hafner",
+                "given": "J."
+            },
+            {
+                "family": "Han",
+                "given": "J. E."
+            },
+            {
+                "family": "Hanson",
+                "given": "K. A."
+            },
+            {
+                "family": "Heath",
+                "given": "J."
+            },
+            {
+                "family": "Hernandez",
+                "given": "C."
+            },
+            {
+                "family": "Hess",
+                "given": "R."
+            },
+            {
+                "family": "Hodder",
+                "given": "S. L."
+            },
+            {
+                "family": "Hoffman",
+                "given": "M. K."
+            },
+            {
+                "family": "Hoover",
+                "given": "S. E."
+            },
+            {
+                "family": "Huang",
+                "given": "B."
+            },
+            {
+                "family": "Hughes",
+                "given": "B. L."
+            },
+            {
+                "family": "Jagannathan",
+                "given": "P."
+            },
+            {
+                "family": "John",
+                "given": "J."
+            },
+            {
+                "family": "Jordan",
+                "given": "M. R."
+            },
+            {
+                "family": "Katz",
+                "given": "S. D."
+            },
+            {
+                "family": "Kaufman",
+                "given": "E. S."
+            },
+            {
+                "family": "Kelly",
+                "given": "J. D."
+            },
+            {
+                "family": "Kelly",
+                "given": "S. W."
+            },
+            {
+                "family": "Kemp",
+                "given": "M. M."
+            },
+            {
+                "family": "Kirwan",
+                "given": "J. P."
+            },
+            {
+                "family": "Klein",
+                "given": "J. D."
+            },
+            {
+                "family": "Knox",
+                "given": "K. S."
+            },
+            {
+                "family": "Krishnan",
+                "given": "J. A."
+            },
+            {
+                "family": "Kumar",
+                "given": "A."
+            },
+            {
+                "family": "Laiyemo",
+                "given": "A. O."
+            },
+            {
+                "family": "Lambert",
+                "given": "A. A."
+            },
+            {
+                "family": "Lanca",
+                "given": "M."
+            },
+            {
+                "family": "Lee-Iannotti",
+                "given": "J. K."
+            },
+            {
+                "family": "Logarbo",
+                "given": "B. P."
+            },
+            {
+                "family": "Longo",
+                "given": "M. T."
+            },
+            {
+                "family": "Luciano",
+                "given": "C. A."
+            },
+            {
+                "family": "Lutrick",
+                "given": "K."
+            },
+            {
+                "family": "Maley",
+                "given": "J. H."
+            },
+            {
+                "family": "Marathe",
+                "given": "J. G."
+            },
+            {
+                "family": "Marconi",
+                "given": "V."
+            },
+            {
+                "family": "Marshall",
+                "given": "G. D."
+            },
+            {
+                "family": "Martin",
+                "given": "C. F."
+            },
+            {
+                "family": "Matusov",
+                "given": "Y."
+            },
+            {
+                "family": "Mehari",
+                "given": "A."
+            },
+            {
+                "family": "Mendez-Figueroa",
+                "given": "H."
+            },
+            {
+                "family": "Mermelstein",
+                "given": "R."
+            },
+            {
+                "family": "Metz",
+                "given": "T. D."
+            },
+            {
+                "family": "Morse",
+                "given": "R."
+            },
+            {
+                "family": "Mosier",
+                "given": "J."
+            },
+            {
+                "family": "Mouchati",
+                "given": "C."
+            },
+            {
+                "family": "Mullington",
+                "given": "J."
+            },
+            {
+                "family": "Murphy",
+                "given": "S. N."
+            },
+            {
+                "family": "Neuman",
+                "given": "R. B."
+            },
+            {
+                "family": "Nikolich",
+                "given": "J. Z."
+            },
+            {
+                "family": "Ofotokun",
+                "given": "I."
+            },
+            {
+                "family": "Ojemakinde",
+                "given": "E."
+            },
+            {
+                "family": "Palatnik",
+                "given": "A."
+            },
+            {
+                "family": "Palomares",
+                "given": "K."
+            },
+            {
+                "family": "Parimon",
+                "given": "T."
+            },
+            {
+                "family": "Parry",
+                "given": "S."
+            },
+            {
+                "family": "Patterson",
+                "given": "J. E."
+            },
+            {
+                "family": "Patterson",
+                "given": "T. F."
+            },
+            {
+                "family": "Patzer",
+                "given": "R. E."
+            },
+            {
+                "family": "Peluso",
+                "given": "M. J."
+            },
+            {
+                "family": "Pemu",
+                "given": "P."
+            },
+            {
+                "family": "Pettker",
+                "given": "C. M."
+            },
+            {
+                "family": "Plunkett",
+                "given": "B. A."
+            },
+            {
+                "family": "Pogreba-Brown",
+                "given": "K."
+            },
+            {
+                "family": "Poppas",
+                "given": "A."
+            },
+            {
+                "family": "Quigley",
+                "given": "J. G."
+            },
+            {
+                "family": "Reddy",
+                "given": "U."
+            },
+            {
+                "family": "Reece",
+                "given": "R."
+            },
+            {
+                "family": "Reeder",
+                "given": "H."
+            },
+            {
+                "family": "Reeves",
+                "given": "W. B."
+            },
+            {
+                "family": "Reiman",
+                "given": "E. M."
+            },
+            {
+                "family": "Rischard",
+                "given": "F."
+            },
+            {
+                "family": "Rosand",
+                "given": "J."
+            },
+            {
+                "family": "Rouse",
+                "given": "D. J."
+            },
+            {
+                "family": "Ruff",
+                "given": "A."
+            },
+            {
+                "family": "Saade",
+                "given": "G."
+            },
+            {
+                "family": "Sandoval",
+                "given": "G. J."
+            },
+            {
+                "family": "Schlater",
+                "given": "S. M."
+            },
+            {
+                "family": "Shepherd",
+                "given": "F."
+            },
+            {
+                "family": "Sherif",
+                "given": "Z. A."
+            },
+            {
+                "family": "Simhan",
+                "given": "H."
+            },
+            {
+                "family": "Singer",
+                "given": "N. G."
+            },
+            {
+                "family": "Skupski",
+                "given": "D. W."
+            },
+            {
+                "family": "Sowles",
+                "given": "A."
+            },
+            {
+                "family": "Sparks",
+                "given": "J. A."
+            },
+            {
+                "family": "Sukhera",
+                "given": "F. I."
+            },
+            {
+                "family": "Taylor",
+                "given": "B. S."
+            },
+            {
+                "family": "Teunis",
+                "given": "L."
+            },
+            {
+                "family": "Thomas",
+                "given": "R. J."
+            },
+            {
+                "family": "Thorp",
+                "given": "J. M."
+            },
+            {
+                "family": "Thuluvath",
+                "given": "P."
+            },
+            {
+                "family": "Ticotsky",
+                "given": "A."
+            },
+            {
+                "family": "Tita",
+                "given": "A. T."
+            },
+            {
+                "family": "Tuttle",
+                "given": "K. R."
+            },
+            {
+                "family": "Urdaneta",
+                "given": "A. E."
+            },
+            {
+                "family": "Valdivieso",
+                "given": "D."
+            },
+            {
+                "family": "VanWagoner",
+                "given": "T. M."
+            },
+            {
+                "family": "Vasey",
+                "given": "A."
+            },
+            {
+                "family": "Verduzco-Gutierrez",
+                "given": "M."
+            },
+            {
+                "family": "Wallace",
+                "given": "Z. S."
+            },
+            {
+                "family": "Ward",
+                "given": "H. D."
+            },
+            {
+                "family": "Warren",
+                "given": "D. E."
+            },
+            {
+                "family": "Weiner",
+                "given": "S. J."
+            },
+            {
+                "family": "Welch",
+                "given": "S."
+            },
+            {
+                "family": "Whiteheart",
+                "given": "S. W."
+            },
+            {
+                "family": "Wiley",
+                "given": "Z."
+            },
+            {
+                "family": "Wisnivesky",
+                "given": "J. P."
+            },
+            {
+                "family": "Yee",
+                "given": "L. M."
+            },
+            {
+                "family": "Zisis",
+                "given": "S."
+            },
+            {
+                "family": "Horwitz",
+                "given": "L. I."
+            },
+            {
+                "family": "Foulkes",
+                "given": "A. S."
+            },
+            {
+                "family": "Recover Consortium"
+            }
+        ],
+        "container-title": "JAMA",
+        "id": "thaweethai2023",
+        "issue": "22",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    6,
+                    13
+                ]
+            ]
+        },
+        "key": "4JXUI284",
+        "libraryid": "1",
+        "page": "1934-1946",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Development of a definition of Postacute Sequelae of SARS-CoV-2 infection",
+        "type": "article-journal",
+        "volume": "329"
+    },
+    {
+        "DOI": "10.1016/j.tem.2023.03.002",
+        "ISSN": "1043-2760, 1879-3061",
+        "PMID": "37080828",
+        "URL": "https://www.cell.com/trends/endocrinology-metabolism/abstract/S1043-2760(23)00055-3",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Turner",
+                "given": "Simone"
+            },
+            {
+                "family": "Khan",
+                "given": "M. Asad"
+            },
+            {
+                "family": "Putrino",
+                "given": "David"
+            },
+            {
+                "family": "Woodcock",
+                "given": "Ashley"
+            },
+            {
+                "family": "Kell",
+                "given": "Douglas B."
+            },
+            {
+                "family": "Pretorius",
+                "given": "Etheresia"
+            }
+        ],
+        "container-title": "Trends in Endocrinology & Metabolism",
+        "container-title-short": "Trends Endocrinol Metab",
+        "id": "turner2023",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    6,
+                    1
+                ]
+            ]
+        },
+        "key": "HWNI9T7E",
+        "language": "English",
+        "libraryid": "1",
+        "page": "321-344",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Elsevier",
+        "source": "www.cell.com",
+        "title": "Long COVID: Pathophysiological factors and abnormalities of coagulation",
+        "title-short": "Long COVID",
+        "type": "article-journal",
+        "volume": "34"
+    },
+    {
+        "DOI": "10.1016/j.jbi.2021.103951",
+        "ISSN": "1532-0464",
+        "URL": "https://www.sciencedirect.com/science/article/pii/S153204642100280X",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    2,
+                    17
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Wang",
+                "given": "Liqin"
+            },
+            {
+                "family": "Foer",
+                "given": "Dinah"
+            },
+            {
+                "family": "MacPhaul",
+                "given": "Erin"
+            },
+            {
+                "family": "Lo",
+                "given": "Ying-Chih"
+            },
+            {
+                "family": "Bates",
+                "given": "David W."
+            },
+            {
+                "family": "Zhou",
+                "given": "Li"
+            }
+        ],
+        "container-title": "Journal of Biomedical Informatics",
+        "container-title-short": "J Biomed Inform",
+        "id": "wang2022",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    1,
+                    1
+                ]
+            ]
+        },
+        "key": "M5S2B8NI",
+        "libraryid": "1",
+        "page": "103951",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "ScienceDirect",
+        "title": "PASCLex: A comprehensive post-acute sequelae of COVID-19 (PASC) symptom lexicon derived from electronic health record clinical notes",
+        "title-short": "PASCLex",
+        "type": "article-journal",
+        "volume": "125"
+    },
+    {
+        "DOI": "10.1038/s41591-022-01689-3",
+        "ISSN": "1546-170X",
+        "URL": "https://www.nature.com/articles/s41591-022-01689-3",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Xie",
+                "given": "Yan"
+            },
+            {
+                "family": "Xu",
+                "given": "Evan"
+            },
+            {
+                "family": "Bowe",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Al-Aly",
+                "given": "Ziyad"
+            }
+        ],
+        "container-title": "Nature Medicine",
+        "container-title-short": "Nat Med",
+        "id": "xie2022",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    3
+                ]
+            ]
+        },
+        "key": "UVWYZ5KA",
+        "language": "en",
+        "libraryid": "1",
+        "page": "583-590",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Nature",
+        "rights": "2022 This is a U.S. government work and not under copyright protection in the U.S.; foreign copyright protection may apply",
+        "source": "www.nature.com",
+        "title": "Long-term cardiovascular outcomes of COVID-19",
+        "type": "article-journal",
+        "volume": "28"
+    },
+    {
+        "DOI": "10.1186/s12879-023-08401-x",
+        "ISSN": "1471-2334",
+        "URL": "https://doi.org/10.1186/s12879-023-08401-x",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    2,
+                    17
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Zhang",
+                "given": "Daya"
+            },
+            {
+                "family": "Chen",
+                "given": "Chen"
+            },
+            {
+                "family": "Xie",
+                "given": "Yunqian"
+            },
+            {
+                "family": "Zeng",
+                "given": "Fan"
+            },
+            {
+                "family": "Chen",
+                "given": "Shiju"
+            },
+            {
+                "family": "Chen",
+                "given": "Runxiang"
+            },
+            {
+                "family": "Zhang",
+                "given": "Xiaodong"
+            },
+            {
+                "family": "Huang",
+                "given": "Shimei"
+            },
+            {
+                "family": "Li",
+                "given": "Da"
+            },
+            {
+                "family": "Bai",
+                "given": "Feihu"
+            }
+        ],
+        "container-title": "BMC Infectious Diseases",
+        "container-title-short": "BMC Infect Dis",
+        "id": "zhang2023",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    6,
+                    21
+                ]
+            ]
+        },
+        "key": "XKBVZIZA",
+        "language": "en",
+        "libraryid": "1",
+        "page": "422",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Springer Link",
+        "title": "Post-infection functional gastrointestinal disorders following coronavirus disease-19: A prospective follow-up cohort study",
+        "title-short": "Post-infection functional gastrointestinal disorders following coronavirus disease-19",
+        "type": "article-journal",
+        "volume": "23"
+    },
+    {
+        "DOI": "10.1177/00033197231153204",
+        "ISSN": "0003-3197",
+        "URL": "https://doi.org/10.1177/00033197231153204",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Zanini",
+                "given": "Giada"
+            },
+            {
+                "family": "Selleri",
+                "given": "Valentina"
+            },
+            {
+                "family": "Roncati",
+                "given": "Luca"
+            },
+            {
+                "family": "Coppi",
+                "given": "Francesca"
+            },
+            {
+                "family": "Nasi",
+                "given": "Milena"
+            },
+            {
+                "family": "Farinetti",
+                "given": "Alberto"
+            },
+            {
+                "family": "Manenti",
+                "given": "Antonio"
+            },
+            {
+                "family": "Pinti",
+                "given": "Marcello"
+            },
+            {
+                "family": "Mattioli",
+                "given": "Anna Vittoria"
+            }
+        ],
+        "container-title": "Angiology",
+        "container-title-short": "Angiology",
+        "id": "zanini2024",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2024,
+                    1,
+                    1
+                ]
+            ]
+        },
+        "key": "J9HTFILC",
+        "language": "EN",
+        "libraryid": "1",
+        "page": "8-14",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "SAGE",
+        "source": "SAGE Journals",
+        "title": "Vascular “Long COVID”: A new vessel disease?",
+        "title-short": "Vascular “Long COVID”",
+        "type": "article-journal",
+        "volume": "75"
+    },
+    {
+        "DOI": "10.1016/0021-9681(87)90171-8",
+        "ISSN": "0021-9681",
+        "URL": "https://www.sciencedirect.com/science/article/pii/0021968187901718",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    8,
+                    21
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Charlson",
+                "given": "Mary E."
+            },
+            {
+                "family": "Pompei",
+                "given": "Peter"
+            },
+            {
+                "family": "Ales",
+                "given": "Kathy L."
+            },
+            {
+                "family": "MacKenzie",
+                "given": "C. Ronald"
+            }
+        ],
+        "container-title": "Journal of Chronic Diseases",
+        "container-title-short": "J Chronic Dis",
+        "id": "charlson1987",
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    1987,
+                    1,
+                    1
+                ]
+            ]
+        },
+        "key": "55EW35YT",
+        "libraryid": "1",
+        "page": "373-383",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "ScienceDirect",
+        "title": "A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation",
+        "title-short": "A new method of classifying prognostic comorbidity in longitudinal studies",
+        "type": "article-journal",
+        "volume": "40"
+    },
+    {
+        "URL": "https://www.stats.ox.ac.uk/pub/MASS4/",
+        "author": [
+            {
+                "family": "Venables",
+                "given": "William N."
+            },
+            {
+                "family": "Ripley",
+                "given": "Brian D."
+            }
+        ],
+        "edition": "4",
+        "id": "venables2002",
+        "issued": {
+            "date-parts": [
+                [
+                    2002
+                ]
+            ]
+        },
+        "key": "SX4DMBF5",
+        "libraryid": "1",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Springer",
+        "publisher-place": "New York",
+        "title": "Modern Applied Statistics with S",
+        "type": "book"
+    },
+    {
+        "DOI": "10.1016/0270-0255(86)90088-6",
+        "ISSN": "0270-0255",
+        "URL": "https://www.sciencedirect.com/science/article/pii/0270025586900886",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    8,
+                    21
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Robins",
+                "given": "James"
+            }
+        ],
+        "container-title": "Mathematical Modelling",
+        "container-title-short": "Mathematical Modelling",
+        "id": "robins1986",
+        "issue": "9",
+        "issued": {
+            "date-parts": [
+                [
+                    1986,
+                    1,
+                    1
+                ]
+            ]
+        },
+        "key": "NQC562HM",
+        "libraryid": "1",
+        "page": "1393-1512",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "ScienceDirect",
+        "title": "A new approach to causal inference in mortality studies with a sustained exposure period—application to control of the healthy worker survivor effect",
+        "type": "article-journal",
+        "volume": "7"
+    },
+    {
+        "URL": "https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/",
+        "author": [
+            {
+                "family": "Hernán",
+                "given": "Miguel A."
+            },
+            {
+                "family": "Robins",
+                "given": "James M."
+            }
+        ],
+        "id": "hernán2024",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "key": "QVA39JPM",
+        "libraryid": "1",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Chapman & Hall/CRC",
+        "publisher-place": "Boca Raton, FL",
+        "title": "Causal Inference: What If?",
+        "type": "book"
+    },
+    {
+        "DOI": "doi:10.18637/jss.v111.i09",
+        "author": [
+            {
+                "family": "Arel-Bundock",
+                "given": "Vincent"
+            },
+            {
+                "family": "Greifer",
+                "given": "Noah"
+            },
+            {
+                "family": "Heiss",
+                "given": "Andrew"
+            }
+        ],
+        "container-title": "Journal Of Statistical Software",
+        "container-title-short": "J Stat Softw",
+        "id": "arel-bundock2024",
+        "issue": "9",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "key": "WWKR83RY",
+        "libraryid": "1",
+        "page": "1-32",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "How to interpret statistical models using marginaleffects in R and Python",
+        "type": "article-journal",
+        "volume": "111"
+    },
+    {
+        "DOI": "10.1001/jamanetworkopen.2022.24359",
+        "ISSN": "2574-3805",
+        "URL": "https://doi.org/10.1001/jamanetworkopen.2022.24359",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    1,
+                    2
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Ioannou",
+                "given": "George N."
+            },
+            {
+                "family": "Baraff",
+                "given": "Aaron"
+            },
+            {
+                "family": "Fox",
+                "given": "Alexandra"
+            },
+            {
+                "family": "Shahoumian",
+                "given": "Troy"
+            },
+            {
+                "family": "Hickok",
+                "given": "Alex"
+            },
+            {
+                "family": "O’Hare",
+                "given": "Ann M."
+            },
+            {
+                "family": "Bohnert",
+                "given": "Amy S. B."
+            },
+            {
+                "family": "Boyko",
+                "given": "Edward J."
+            },
+            {
+                "family": "Maciejewski",
+                "given": "Matthew L."
+            },
+            {
+                "family": "Bowling",
+                "given": "C. Barrett"
+            },
+            {
+                "family": "Viglianti",
+                "given": "Elizabeth"
+            },
+            {
+                "family": "Iwashyna",
+                "given": "Theodore J."
+            },
+            {
+                "family": "Hynes",
+                "given": "Denise M."
+            }
+        ],
+        "container-title": "JAMA Network Open",
+        "container-title-short": "JAMA Netw Open",
+        "id": "ioannou2022",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    7,
+                    29
+                ]
+            ]
+        },
+        "key": "KVJMW7N5",
+        "libraryid": "1",
+        "page": "e2224359",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "Rates and factors associated with documentation of diagnostic codes for Long COVID in the national Veterans Affairs Health Care System",
+        "type": "article-journal",
+        "volume": "5"
+    },
+    {
+        "DOI": "10.1111/jrh.12796",
+        "ISSN": "1748-0361",
+        "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jrh.12796",
+        "_eprint": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/jrh.12796",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    8,
+                    23
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Mora",
+                "given": "Ana M."
+            },
+            {
+                "family": "Kogut",
+                "given": "Katherine"
+            },
+            {
+                "family": "Sandhu",
+                "given": "Nimrat K."
+            },
+            {
+                "family": "Ridgway",
+                "given": "Derry"
+            },
+            {
+                "family": "Patty",
+                "given": "Chris M."
+            },
+            {
+                "family": "Renteria",
+                "given": "Melissa"
+            },
+            {
+                "family": "Morga",
+                "given": "Norma"
+            },
+            {
+                "family": "Rodriguez",
+                "given": "Maria T."
+            },
+            {
+                "family": "Romero",
+                "given": "Monica"
+            },
+            {
+                "family": "Valdovinos",
+                "given": "Jose M."
+            },
+            {
+                "family": "Torres-Nguyen",
+                "given": "Alma"
+            },
+            {
+                "family": "Guzman",
+                "given": "Omar"
+            },
+            {
+                "family": "Martinez",
+                "given": "Mario"
+            },
+            {
+                "family": "Doty",
+                "given": "Richard L."
+            },
+            {
+                "family": "Padilla",
+                "given": "Ana"
+            },
+            {
+                "family": "Flores",
+                "given": "Edward"
+            },
+            {
+                "family": "Brown",
+                "given": "Paul M."
+            },
+            {
+                "family": "Eskenazi",
+                "given": "Brenda"
+            },
+            {
+                "family": "Team",
+                "given": "the California Farmworker Health Study"
+            }
+        ],
+        "container-title": "The Journal of Rural Health",
+        "container-title-short": "J Rural Health",
+        "id": "mora2024",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "key": "D9AEKGG4",
+        "language": "en",
+        "libraryid": "1",
+        "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/jrh.12796",
+        "page": "292-302",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "rights": "© 2023 The Authors. The Journal of Rural Health published by Wiley Periodicals LLC on behalf of National Rural Health Association.",
+        "source": "Wiley Online Library",
+        "title": "SARS-CoV-2 infection and long COVID among California farmworkers",
+        "type": "article-journal",
+        "volume": "40"
+    },
+    {
+        "URL": "https://www.covid.gov/sites/default/files/documents/National-Research-Action-Plan-on-Long-COVID-08012022.pdf",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    12,
+                    20
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Department of Health and Human Services, Office of the Assistant Secretary for Health"
+            }
+        ],
+        "id": "HHS2022",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "key": "99HVERGG",
+        "libraryid": "1",
+        "note": "Citation Key: HHS2022",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher-place": "200 Independence Ave SW, Washington, DC 20201",
+        "title": "National research action plan on long COVID",
+        "type": "report"
+    },
+    {
+        "DOI": "10.1159/000540919",
+        "ISSN": "0251-5350",
+        "URL": "https://doi.org/10.1159/000540919",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    29
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Gorenshtein",
+                "given": "Alon"
+            },
+            {
+                "family": "Leibovitch",
+                "given": "Liron"
+            },
+            {
+                "family": "Liba",
+                "given": "Tom"
+            },
+            {
+                "family": "Stern",
+                "given": "Shai"
+            },
+            {
+                "family": "Stern",
+                "given": "Yael"
+            }
+        ],
+        "container-title": "Neuroepidemiology",
+        "container-title-short": "Neuroepidemiology",
+        "id": "gorenshtein2025",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2025
+                ]
+            ]
+        },
+        "key": "NCJT5BB4",
+        "libraryid": "1",
+        "page": "426-440",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "Gender disparities in neurological symptoms of long COVID: A systematic review and meta-analysis",
+        "title-short": "Gender disparities in neurological symptoms of long COVID",
+        "type": "article-journal",
+        "volume": "59"
+    },
+    {
+        "DOI": "10.1002/ana.27128",
+        "ISSN": "1531-8249",
+        "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ana.27128",
+        "_eprint": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/ana.27128",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    29
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Choudhury",
+                "given": "Natasha A."
+            },
+            {
+                "family": "Mukherjee",
+                "given": "Shreya"
+            },
+            {
+                "family": "Singer",
+                "given": "Tracey"
+            },
+            {
+                "family": "Venkatesh",
+                "given": "Aditi"
+            },
+            {
+                "family": "Perez Giraldo",
+                "given": "Gina S."
+            },
+            {
+                "family": "Jimenez",
+                "given": "Millenia"
+            },
+            {
+                "family": "Miller",
+                "given": "Janet"
+            },
+            {
+                "family": "Lopez",
+                "given": "Melissa"
+            },
+            {
+                "family": "Hanson",
+                "given": "Barbara A."
+            },
+            {
+                "family": "Bawa",
+                "given": "Aasheeta P."
+            },
+            {
+                "family": "Batra",
+                "given": "Ayush"
+            },
+            {
+                "family": "Liotta",
+                "given": "Eric M."
+            },
+            {
+                "family": "Koralnik",
+                "given": "Igor J."
+            }
+        ],
+        "container-title": "Annals of Neurology",
+        "container-title-short": "Ann Neurol",
+        "id": "choudhury2025",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2025
+                ]
+            ]
+        },
+        "key": "B462DNT9",
+        "language": "en",
+        "libraryid": "1",
+        "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/ana.27128",
+        "page": "369-383",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "rights": "© 2024 The Author(s). Annals of Neurology published by Wiley Periodicals LLC on behalf of American Neurological Association.",
+        "source": "Wiley Online Library",
+        "title": "Neurologic manifestations of long COVID disproportionately affect young and middle-age adults",
+        "type": "article-journal",
+        "volume": "97"
+    },
+    {
+        "DOI": "10.1111/jgs.70043",
+        "ISSN": "1532-5415",
+        "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jgs.70043",
+        "_eprint": "https://agsjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/jgs.70043",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    29
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Fain",
+                "given": "Mindy J."
+            },
+            {
+                "family": "Horne",
+                "given": "Benjamin D."
+            },
+            {
+                "family": "Horwitz",
+                "given": "Leora I."
+            },
+            {
+                "family": "Thaweethai",
+                "given": "Tanayott"
+            },
+            {
+                "family": "Greene",
+                "given": "Meredith"
+            },
+            {
+                "family": "Hornig",
+                "given": "Mady"
+            },
+            {
+                "family": "Orkaby",
+                "given": "Ariela R."
+            },
+            {
+                "family": "Rosen",
+                "given": "Clifford"
+            },
+            {
+                "family": "Ritchie",
+                "given": "Christine S."
+            },
+            {
+                "family": "Ashktorab",
+                "given": "Hassan"
+            },
+            {
+                "family": "Blachman",
+                "given": "Nina"
+            },
+            {
+                "family": "Brim",
+                "given": "Hassan"
+            },
+            {
+                "family": "Emerson",
+                "given": "Sarah"
+            },
+            {
+                "family": "Erdmann",
+                "given": "Nathan"
+            },
+            {
+                "family": "Erlandson",
+                "given": "Kristine M."
+            },
+            {
+                "family": "Erausquin",
+                "given": "Gabriel"
+            },
+            {
+                "family": "Fong",
+                "given": "Tamara"
+            },
+            {
+                "family": "Geng",
+                "given": "Linda N."
+            },
+            {
+                "family": "Gordon",
+                "given": "Howard S."
+            },
+            {
+                "family": "Gully",
+                "given": "Jacqueline Rutter"
+            },
+            {
+                "family": "Hadlock",
+                "given": "Jennifer"
+            },
+            {
+                "family": "Han",
+                "given": "Jenny"
+            },
+            {
+                "family": "Huang",
+                "given": "Weixing"
+            },
+            {
+                "family": "Jagannathan",
+                "given": "Prasanna"
+            },
+            {
+                "family": "Kelly",
+                "given": "J. Daniel"
+            },
+            {
+                "family": "Klein",
+                "given": "Jonathan D."
+            },
+            {
+                "family": "Krishnan",
+                "given": "Jerry A."
+            },
+            {
+                "family": "Levitan",
+                "given": "Emily B."
+            },
+            {
+                "family": "McComsey",
+                "given": "Grace A."
+            },
+            {
+                "family": "McDonald",
+                "given": "Dylan"
+            },
+            {
+                "family": "Montgomery",
+                "given": "Aoyjai P."
+            },
+            {
+                "family": "O’Brien",
+                "given": "Lisa"
+            },
+            {
+                "family": "Ofotokun",
+                "given": "Ighovwerha"
+            },
+            {
+                "family": "Patterson",
+                "given": "Thomas F."
+            },
+            {
+                "family": "Peluso",
+                "given": "Michael J."
+            },
+            {
+                "family": "Pemu",
+                "given": "Priscilla"
+            },
+            {
+                "family": "Perlowski",
+                "given": "Alice"
+            },
+            {
+                "family": "Reiman",
+                "given": "Eric M."
+            },
+            {
+                "family": "Sanon",
+                "given": "Martine"
+            },
+            {
+                "family": "Seshadri",
+                "given": "Sudha"
+            },
+            {
+                "family": "Shellito",
+                "given": "Judd"
+            },
+            {
+                "family": "Sherif",
+                "given": "Zaki A."
+            },
+            {
+                "family": "Shikuma",
+                "given": "Cecilia"
+            },
+            {
+                "family": "Singer",
+                "given": "Nora G."
+            },
+            {
+                "family": "Singh",
+                "given": "Upinder"
+            },
+            {
+                "family": "Trinity",
+                "given": "Joel D."
+            },
+            {
+                "family": "Wisnivesky",
+                "given": "Juan"
+            },
+            {
+                "family": "Witvliet",
+                "given": "Margot Gage"
+            },
+            {
+                "family": "Foulkes",
+                "given": "Andrea"
+            },
+            {
+                "family": "Nikolich",
+                "given": "Janko Ž."
+            },
+            {
+                "family": "Consortium",
+                "given": "the RECOVER"
+            }
+        ],
+        "container-title": "Journal of the American Geriatrics Society",
+        "container-title-short": "J Am Geriatr Soc",
+        "id": "fain2025",
+        "issue": "10",
+        "issued": {
+            "date-parts": [
+                [
+                    2025
+                ]
+            ]
+        },
+        "key": "QUJ8DAD4",
+        "language": "en",
+        "libraryid": "1",
+        "note": "_eprint: https://agsjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/jgs.70043",
+        "page": "3123-3137",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "rights": "© 2025 The American Geriatrics Society.",
+        "source": "Wiley Online Library",
+        "title": "Age-related changes in the clinical picture of long COVID",
+        "type": "article-journal",
+        "volume": "73"
+    },
+    {
+        "DOI": "10.1001/jama.2020.21753",
+        "ISSN": "0098-7484",
+        "URL": "https://doi.org/10.1001/jama.2020.21753",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    29
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Vahia",
+                "given": "Ipsit V."
+            },
+            {
+                "family": "Jeste",
+                "given": "Dilip V."
+            },
+            {
+                "family": "Reynolds",
+                "given": "Charles F."
+            }
+        ],
+        "container-title": "JAMA",
+        "container-title-short": "JAMA",
+        "id": "vahia2020",
+        "issue": "22",
+        "issued": {
+            "date-parts": [
+                [
+                    2020,
+                    12,
+                    8
+                ]
+            ]
+        },
+        "key": "NAVN9WHY",
+        "libraryid": "1",
+        "page": "2253-2254",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Silverchair",
+        "title": "Older adults and the mental health effects of COVID-19",
+        "type": "article-journal",
+        "volume": "324"
+    },
+    {
+        "DOI": "10.7717/peerj.17898",
+        "ISSN": "2167-8359",
+        "URL": "https://peerj.com/articles/17898",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    27
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Kiatratdasakul",
+                "given": "Supanchita"
+            },
+            {
+                "family": "Noisumdaeng",
+                "given": "Pirom"
+            },
+            {
+                "family": "Niyomdecha",
+                "given": "Nattamon"
+            }
+        ],
+        "container-title": "PeerJ",
+        "container-title-short": "PeerJ",
+        "id": "kiatratdasakul2024",
+        "issued": {
+            "date-parts": [
+                [
+                    2024,
+                    8,
+                    19
+                ]
+            ]
+        },
+        "key": "TRUFNIVX",
+        "language": "en",
+        "libraryid": "1",
+        "page": "e17898",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "PeerJ",
+        "source": "peerj.com",
+        "title": "Biological factors associated with long COVID and comparative analysis of SARS-CoV-2 spike protein variants: A retrospective study in Thailand",
+        "title-short": "Biological factors associated with long COVID and comparative analysis of SARS-CoV-2 spike protein variants",
+        "type": "article-journal",
+        "volume": "12"
+    },
+    {
+        "DOI": "10.1016/j.isci.2024.109536",
+        "ISSN": "2589-0042",
+        "PMID": "38425843",
+        "URL": "https://www.cell.com/iscience/abstract/S2589-0042(24)00758-2",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    27
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Padilla",
+                "given": "Sergio"
+            },
+            {
+                "family": "Ledesma",
+                "given": "Christian"
+            },
+            {
+                "family": "García-Abellán",
+                "given": "Javier"
+            },
+            {
+                "family": "García",
+                "given": "José Alberto"
+            },
+            {
+                "family": "Fernández-González",
+                "given": "Marta"
+            },
+            {
+                "family": "Rica",
+                "given": "Alba"
+            },
+            {
+                "family": "Galiana",
+                "given": "Antonio"
+            },
+            {
+                "family": "Gutiérrez",
+                "given": "Félix"
+            },
+            {
+                "family": "Masiá",
+                "given": "Mar"
+            }
+        ],
+        "container-title": "iScience",
+        "container-title-short": "iScience",
+        "id": "padilla2024",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2024,
+                    4,
+                    19
+                ]
+            ]
+        },
+        "key": "5M73LGHA",
+        "language": "English",
+        "libraryid": "1",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Elsevier",
+        "source": "www.cell.com",
+        "title": "Long COVID across SARS-CoV-2 variants, lineages, and sublineages",
+        "type": "article-journal",
+        "volume": "27"
+    },
+    {
+        "DOI": "10.1016/S0140-6736(22)00941-2",
+        "ISSN": "0140-6736, 1474-547X",
+        "PMID": "35717982",
+        "URL": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)00941-2/fulltext",
+        "accessed": {
+            "date-parts": [
+                [
+                    2024,
+                    12,
+                    16
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Antonelli",
+                "given": "Michela"
+            },
+            {
+                "family": "Pujol",
+                "given": "Joan Capdevila"
+            },
+            {
+                "family": "Spector",
+                "given": "Tim D."
+            },
+            {
+                "family": "Ourselin",
+                "given": "Sebastien"
+            },
+            {
+                "family": "Steves",
+                "given": "Claire J."
+            }
+        ],
+        "container-title": "The Lancet",
+        "container-title-short": "The Lancet",
+        "id": "antonelli2022",
+        "issue": "10343",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    6,
+                    18
+                ]
+            ]
+        },
+        "key": "YQ28BDP8",
+        "language": "English",
+        "libraryid": "1",
+        "page": "2263-2264",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Elsevier",
+        "source": "www.thelancet.com",
+        "title": "Risk of long COVID associated with delta versus omicron variants of SARS-CoV-2",
+        "type": "article-journal",
+        "volume": "399"
+    },
+    {
+        "DOI": "10.3390/v14122629",
+        "ISSN": "1999-4915",
+        "URL": "https://www.mdpi.com/1999-4915/14/12/2629",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    7
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Fernández-de-las-Peñas",
+                "given": "César"
+            },
+            {
+                "family": "Notarte",
+                "given": "Kin Israel"
+            },
+            {
+                "family": "Peligro",
+                "given": "Princess Juneire"
+            },
+            {
+                "family": "Velasco",
+                "given": "Jacqueline Veronica"
+            },
+            {
+                "family": "Ocampo",
+                "given": "Miguel Joaquín"
+            },
+            {
+                "family": "Henry",
+                "given": "Brandon Michael"
+            },
+            {
+                "family": "Arendt-Nielsen",
+                "given": "Lars"
+            },
+            {
+                "family": "Torres-Macho",
+                "given": "Juan"
+            },
+            {
+                "family": "Plaza-Manzano",
+                "given": "Gustavo"
+            }
+        ],
+        "container-title": "Viruses",
+        "id": "fernández-de-las-peñas2022",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    12
+                ]
+            ]
+        },
+        "key": "XZDNNGH8",
+        "language": "en",
+        "libraryid": "1",
+        "number": "12",
+        "page": "2629",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "publisher": "Multidisciplinary",
+        "rights": "http://creativecommons.org/licenses/by/3.0/",
+        "source": "www.mdpi.com",
+        "title": "Long-COVID symptoms in individuals infected with different SARS-CoV-2 variants of concern: A systematic review of the literature",
+        "title-short": "Long-COVID Symptoms in Individuals Infected with Different SARS-CoV-2 Variants of Concern",
+        "type": "article-journal",
+        "volume": "14"
+    },
+    {
+        "DOI": "10.1007/s15010-024-02438-z",
+        "ISSN": "1439-0973",
+        "URL": "https://doi.org/10.1007/s15010-024-02438-z",
+        "accessed": {
+            "date-parts": [
+                [
+                    2025,
+                    10,
+                    27
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Pfrommer",
+                "given": "Laura Rebecca"
+            },
+            {
+                "family": "Diexer",
+                "given": "Sophie"
+            },
+            {
+                "family": "Klee",
+                "given": "Bianca"
+            },
+            {
+                "family": "Massag",
+                "given": "Janka"
+            },
+            {
+                "family": "Gottschick",
+                "given": "Cornelia"
+            },
+            {
+                "family": "Purschke",
+                "given": "Oliver"
+            },
+            {
+                "family": "Binder",
+                "given": "Mascha"
+            },
+            {
+                "family": "Frese",
+                "given": "Thomas"
+            },
+            {
+                "family": "Girndt",
+                "given": "Matthias"
+            },
+            {
+                "family": "Sedding",
+                "given": "Daniel"
+            },
+            {
+                "family": "Rosendahl",
+                "given": "Jonas"
+            },
+            {
+                "family": "Hoell",
+                "given": "Jessica I."
+            },
+            {
+                "family": "Moor",
+                "given": "Irene"
+            },
+            {
+                "family": "Gekle",
+                "given": "Michael"
+            },
+            {
+                "family": "Allwang",
+                "given": "Christine"
+            },
+            {
+                "family": "Junne",
+                "given": "Florian"
+            },
+            {
+                "family": "Mikolajczyk",
+                "given": "Rafael"
+            }
+        ],
+        "container-title": "Infection",
+        "container-title-short": "Infection",
+        "id": "pfrommer2025",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2025,
+                    4,
+                    1
+                ]
+            ]
+        },
+        "key": "8LK2T28T",
+        "language": "en",
+        "libraryid": "1",
+        "page": "657-665",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "source": "Springer Link",
+        "title": "Post-COVID recovery is faster after an infection with the SARS-CoV-2 Omicron variant: A population-based cohort study",
+        "title-short": "Post-COVID recovery is faster after an infection with the SARS-CoV-2 Omicron variant",
+        "type": "article-journal",
+        "volume": "53"
+    },
+    {
+        "DOI": "10.1038/s41591-022-02051-3",
+        "ISSN": "1546-170X (Electronic) 1078-8956 (Print) 1078-8956 (Linking)",
+        "PMCID": "PMC9671810",
+        "author": [
+            {
+                "family": "Bowe",
+                "given": "B."
+            },
+            {
+                "family": "Xie",
+                "given": "Y."
+            },
+            {
+                "family": "Al-Aly",
+                "given": "Z."
+            }
+        ],
+        "container-title": "Nature Medicine",
+        "container-title-short": "Nat Med",
+        "id": "bowe2022",
+        "issue": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    11
+                ]
+            ]
+        },
+        "key": "SGQ4LR5G",
+        "libraryid": "1",
+        "page": "2398-2405",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Acute and postacute sequelae associated with SARS-CoV-2 reinfection",
+        "type": "article-journal",
+        "volume": "28"
+    },
+    {
+        "author": [
+            {
+                "family": "Hottel",
+                "given": "Wesley"
+            },
+            {
+                "family": "Reeb",
+                "given": "Valerie"
+            },
+            {
+                "family": "Twait",
+                "given": "Erik"
+            },
+            {
+                "family": "Zanon",
+                "given": "Kristen"
+            },
+            {
+                "family": "Hwang",
+                "given": "Munok"
+            },
+            {
+                "family": "Choi",
+                "given": "Hosoon"
+            },
+            {
+                "family": "Chatterjee",
+                "given": "Piyali"
+            },
+            {
+                "family": "Xiang",
+                "given": "Jinhua"
+            },
+            {
+                "family": "Meier",
+                "given": "Jeffrey"
+            },
+            {
+                "family": "Pentella",
+                "given": "Michael"
+            },
+            {
+                "family": "McIndoo",
+                "given": "Eric"
+            },
+            {
+                "family": "Ammons",
+                "given": "Mary Cloud B."
+            },
+            {
+                "family": "Jinadatha",
+                "given": "Chitan"
+            },
+            {
+                "family": "Stapleton",
+                "given": "Jack T."
+            }
+        ],
+        "container-title": "Microbiology Spectrum",
+        "container-title-short": "Microbiol Spectr",
+        "id": "hottel",
+        "issued": {
+            "date-parts": [
+                [
+                    0
+                ]
+            ]
+        },
+        "key": "Y9XLKQ5H",
+        "libraryid": "1",
+        "providerkey": "2509FBBE-5BB0-44C4-B119-6083A81ED673",
+        "title": "Direct comparison of Nanopore and Illumina sequencing of SARS-CoV-2",
+        "type": "article-journal"
+    }
+]

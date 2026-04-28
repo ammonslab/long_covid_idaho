@@ -1,0 +1,9 @@
+index,seqName,clade,clade_display,clade_who,clade_nextstrain,partiallyAliased,Nextclade_pango,qc.overallScore,qc.overallStatus
+13,1720014430,20G,20G,,20G,B.1.2,B.1.2,742.188851,bad
+406,1722022442,21L,21L (BA.2),Omicron,21L,BA.2.3.20,BA.2.3.20,100.401111,bad
+499,1721028140,21K,21K (BA.1),Omicron,21K,BA.1.1,BA.1.1,146.006944,bad
+620,1722001354,21K,21K (BA.1),Omicron,21K,BA.1.1,BA.1.1,237.673611,bad
+852,1721028136,21J,21J (Delta),Delta,21J,B.1.617.2.103,AY.103,117.361111,bad
+878,1722004988,21K,21K (BA.1),Omicron,21K,BA.1.1,BA.1.1,166.840278,bad
+890,1722022448,22B,22B (BA.5),Omicron,22B,BA.5.2.1.21,BF.21,128.074489,bad
+1064,1722022971,22A,22A (BA.4),Omicron,22A,BA.4.1.8,BA.4.1.8,156.329232,bad
