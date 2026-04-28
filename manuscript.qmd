@@ -62,37 +62,6 @@ Mary Cloud B. Ammons (marycloud.ammonsanderson\@va.gov)
 ```{r}
 #| label: read_data
 
-# Load packages
-library(tidyverse)
-library(odbc)             # Connect to db
-library(DBI)              # Work with db
-library(marginaleffects)  # Summarize model results
-library(lubridate)
-library(gt)
-library(consort)
-library(feather)
-library(nnet)             # Multinomial models
-library(ggokabeito)
-library(gtsummary)
-library(flextable)
-library(ggraph)
-library(patchwork)        # Needed to align plots in a panel figure
-library(here)             # Knit from directories other than project
-
-# Resolve conflicts
-select <- dplyr::select
-filter <- dplyr::filter
-
-# Custom ggplot theme
-my_theme <- function(base_size = 12, base_family = "") {
-  theme_classic(base_size = base_size, base_family = base_family) %+replace%
-    theme(
-       panel.grid.major = element_line(linewidth = 0.1),
-       strip.background = element_blank()
-    )
-}
-theme_set(my_theme())
-
 # Set up here
 here::i_am("manuscript.qmd")
 

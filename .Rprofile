@@ -39,7 +39,15 @@ filter <- dplyr::filter
 
 # ggplot theme -----------------------------------------
 
-theme_set(theme_minimal())
+# Custom ggplot theme
+my_theme <- function(base_size = 12, base_family = "") {
+  theme_classic(base_size = base_size, base_family = base_family) %+replace%
+    theme(
+      panel.grid.major = element_line(linewidth = 0.1),
+      strip.background = element_blank()
+    )
+}
+theme_set(my_theme())
 
 # R-squared ---------------------------------------------------
 
