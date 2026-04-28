@@ -61,7 +61,6 @@ Mary Cloud B. Ammons (marycloud.ammonsanderson\@va.gov)
 
 ```{r}
 #| label: read_data
-
 # Set up here
 here::i_am("manuscript.qmd")
 
@@ -75,12 +74,18 @@ data_excl <- read_feather(here("data/data_excl.feather"))
 data_mod <- read_feather(here("data/data_mod.feather"))
 
 # Extract study start/stop dates
-study_dates <- 
-  tibble(type = c("min", "max"),
-         date = c(min(data_excl$LabSpecimenTakenDateTime, na.rm = TRUE),
-                  max(data_excl$LabSpecimenTakenDateTime, na.rm = TRUE))) |>
-  mutate(date = format(date, "%B %d, %Y"),
-         date = str_replace(date, " 02, ", " 2, "))
+study_dates <-
+  tibble(
+    type = c("min", "max"),
+    date = c(
+      min(data_excl$LabSpecimenTakenDateTime, na.rm = TRUE),
+      max(data_excl$LabSpecimenTakenDateTime, na.rm = TRUE)
+    )
+  ) |>
+  mutate(
+    date = format(date, "%B %d, %Y"),
+    date = str_replace(date, " 02, ", " 2, ")
+  )
 
 # Read in age scaling variables
 age_scale <- read_rds(here("data/age_scale.rds"))
@@ -103,7 +108,9 @@ percent_nonwhite <- data_mod |>
   pull(percent_nonwhite) |>
   round(digits = 0)
 percent_hisp <- data_mod |>
-  summarize(percent_hisp = sum(ethnicity == "Hispanic Or Latino") / n() * 100) |>
+  summarize(
+    percent_hisp = sum(ethnicity == "Hispanic Or Latino") / n() * 100
+  ) |>
   pull(percent_hisp) |>
   round(digits = 0)
 percent_unique <- unique(percent_nonwhite, percent_hisp)
@@ -126,6 +133,10 @@ mean_age <- data_excl |>
 # Get diagnostic ICD-10 codes
 icd10 <- read_feather(here("data/icd10.feather"))
 
+# Create directory for figures
+if (!dir.exists("figures")) {
+  dir.create("figures")
+}
 ```
 
 **Abstract**
@@ -185,29 +196,44 @@ The cohort was narrowed to `r data_excl |> filter(is.na(exclusion)) |> nrow() |>
 ```{r}
 #| label: fig-consort
 #| fig-cap: !expr paste0(data_excl |> filter(!is.na(exclusion)) |> nrow() |> format(big.mark = ","), " patients were excluded from the original cohort of ", nrow(data_excl) |> format(big.mark = ","), ", leaving ", data_excl |> filter(is.na(exclusion)) |> nrow() |> format(big.mark = ","), " analyzable cases.")
-
 # Consort diagram
 consort_fig <- consort_plot(
   data = data_excl |>
-    mutate(exclusion = fct_relevel(
-      exclusion, "No nearby index date", "Non-veteran or veteran employee",
-      "No record of COVID positivity", "Missing predictor values",
-      "Died within 270 days")),
-  orders = c(patient = paste0(
-    "Patients with a sequenced SARS-CoV-2 sample\nfrom ",
-    study_dates |> filter(type == "min") |> pull(date), "-",
-    study_dates |> filter(type == "max") |> pull(date)),
+    mutate(
+      exclusion = fct_relevel(
+        exclusion,
+        "No nearby index date",
+        "Non-veteran or veteran employee",
+        "No record of COVID positivity",
+        "Missing predictor values",
+        "Died within 270 days"
+      )
+    ),
+  orders = c(
+    patient = paste0(
+      "Patients with a sequenced SARS-CoV-2 sample\nfrom ",
+      study_dates |> filter(type == "min") |> pull(date),
+      "-",
+      study_dates |> filter(type == "max") |> pull(date)
+    ),
     exclusion = "Excluded",
-    patient = "Cases analyzed"),
-  side_box = c("exclusion"))
+    patient = "Cases analyzed"
+  ),
+  side_box = c("exclusion")
+)
 
 # Write to file & insert into word doc
 # NOTE: This is printing "svg 2" to word doc. Fix.
-tiff(here("figures/consort_fig.tiff"), width = 5, height = 3, units = "in", res = 600)
+tiff(
+  here("figures/consort_fig.tiff"),
+  width = 5,
+  height = 3,
+  units = "in",
+  res = 600
+)
 print(consort_fig)
 out <- dev.off()
 knitr::include_graphics(here("figures/consort_fig.tiff"))
-
 ```
 
 The final cohort was predominantly older (*M* = `r mean_age` years) and male (`r percent_male`%), with only small numbers of patients identifying as non-white or Hispanic---just `r percent_unique`% for both. This precluded using either race or ethnicity as model predictors. Predictors that were used for modeling are summarized in @tbl-table1. @fig-symptoms gives the symptoms experienced by patients in the final cohort according to their long COVID phenotype label: cardiopulmonary, neuropsychiatric, or multisystem.
@@ -215,7 +241,6 @@ The final cohort was predominantly older (*M* = `r mean_age` years) and male (`r
 ```{r}
 #| label: tbl-table1
 #| tbl-cap: Model predictors by long COVID outcomes. Outcomes in each categorical row sum to the values in the Overall column.
-
 # Table 1
 # We're not modeling race & ethnicity because < 6% of the cohort are non-white or hispanic
 data_excl |>
@@ -224,17 +249,33 @@ data_excl |>
     across(where(is.factor), ~ fct_drop(.x)),
     clade = fct_relevel(clade, "Pre-Delta", "Delta", "Early Omicron"),
     outcome = fct_relevel(
-      outcome, "Cardiopulmonary", "Neuropsychiatric", "Multisystem")) |>
+      outcome,
+      "Cardiopulmonary",
+      "Neuropsychiatric",
+      "Multisystem"
+    )
+  ) |>
   tbl_summary(
     include = c(
-      outcome, clade, age, sex, rurality, svi, comorbidity, smoking,
-      contact_days, vax, paxlovid),
-    
+      outcome,
+      clade,
+      age,
+      sex,
+      rurality,
+      svi,
+      comorbidity,
+      smoking,
+      contact_days,
+      vax,
+      paxlovid
+    ),
+
     # Force table to show both levels of yes/no variables
     type = list(
       comorbidity ~ "categorical",
       smoking ~ "categorical",
-      paxlovid ~ "categorical"),
+      paxlovid ~ "categorical"
+    ),
     label = list(
       outcome = "Outcome",
       clade = "Variant",
@@ -246,12 +287,15 @@ data_excl |>
       smoking = "Smoking",
       paxlovid = "Paxlovid",
       vax = "Vaccination (doses)",
-      contact_days = "Utilization (days)"),
+      contact_days = "Utilization (days)"
+    ),
     by = outcome,
     statistic = list(
-      all_continuous() ~ "{mean} ({sd})"),
+      all_continuous() ~ "{mean} ({sd})"
+    ),
     digits = list(all_continuous() ~ 1),
-    percent = "row") |>
+    percent = "row"
+  ) |>
   add_overall() |>
   modify_header(label = "**Predictor**") |>
   modify_spanning_header(stat_1:stat_4 ~ "**Outcome**") |>
@@ -261,27 +305,24 @@ data_excl |>
   font(fontname = "Times New Roman", part = "all") |>
   fontsize(size = 10, part = "all") |>
   set_table_properties(layout = "autofit")
-
 ```
 
 ```{r}
 #| label: fig-symptoms
 #| fig-cap: Symptoms experienced by patients with different long COVID phenotypes. Multisystem symptoms are based on cardipulmonary, neuropsychiatric, and gastrointestinal ICD-10 codes.
-
 # Table is one row per patient per unique study ICD-10 code that's new in the post window. Table includes patients with and without long covid.
 new_icd <- read_feather(here("data/new_icd.feather"))
 
 # All long covid cases used in analysis
 lc_cases <- data_excl |>
-  filter(is.na(exclusion),
-         outcome != "Recovered") |>
+  filter(is.na(exclusion), outcome != "Recovered") |>
   select(patient, index_date, phenotype = outcome) |>
   mutate(phenotype = as.character(phenotype))
 
 # Table of study ICD10 metadata, including long covid phenotype and symptom cluster.
 meta <- read_csv(here("data/phenotype_symptoms_codes.csv"))
 
-# Table is all unique ICD10 codes used to diagnose each patient as having a form of long covid. One row per long covid patient per code. The left join to codes that are new in the post window means that we drop codes associated with patients who don't have a form of long covid. The inner join to metadata by code and phenotype means that we drop new codes that a long covid patient has that don't match their diagnosed form of long covid. For example, they might have 2 new cardio codes in the post window (so cardio long covid diagnosis), but also a single digestive code. The single digestive code gets dropped. 
+# Table is all unique ICD10 codes used to diagnose each patient as having a form of long covid. One row per long covid patient per code. The left join to codes that are new in the post window means that we drop codes associated with patients who don't have a form of long covid. The inner join to metadata by code and phenotype means that we drop new codes that a long covid patient has that don't match their diagnosed form of long covid. For example, they might have 2 new cardio codes in the post window (so cardio long covid diagnosis), but also a single digestive code. The single digestive code gets dropped.
 
 # Join every case to new ICD-10 codes for that case in the post window
 lc_symptoms <- lc_cases |>
@@ -293,7 +334,8 @@ multi_symp <- lc_symptoms |>
   inner_join(
     meta |>
       select(symptom, ICD10Code),
-    by = "ICD10Code")
+    by = "ICD10Code"
+  )
 
 # Cardio & neuro symptoms. Cases labeled with cardio or neuro long covid can only have cardio or neuro symptoms.
 cn_symp <- lc_symptoms |>
@@ -303,7 +345,8 @@ cn_symp <- lc_symptoms |>
 # Table of all post window ICD-10 codes that were used to label the phenotype of long covid cases. For neuro and cardio these are only neuro/cardio codes. For multisystem the codes can be neuro, cardio, or digestive.
 symptoms_all <- bind_rows(
   multi_symp,
-  cn_symp)
+  cn_symp
+)
 
 # Number of long covid cases per phenotype. This matches Table 1.
 cases_phenotype <- symptoms_all |>
@@ -313,7 +356,7 @@ cases_phenotype <- symptoms_all |>
 
 # % of cases with a label that have a symptom
 symp_data <- symptoms_all |>
-  
+
   # Make 1 row per phenotype and symptom
   select(patient, phenotype, symptom) |>
   unique() |>
@@ -322,15 +365,23 @@ symp_data <- symptoms_all |>
   mutate(
     p_symp = n / tot_pheno * 100,
     symptom = str_wrap(str_to_sentence(symptom), 16),
-    symptom = if_else(str_detect(
-      symptom, "irritable"), "Incontinence, IBS", symptom),
+    symptom = if_else(
+      str_detect(
+        symptom,
+        "irritable"
+      ),
+      "Incontinence, IBS",
+      symptom
+    ),
     symptom = if_else(symptom == "Bleeding", "GI bleeding", symptom),
     symptom = fct_reorder(symptom, p_symp),
-    phenotype = as_factor(phenotype))
+    phenotype = as_factor(phenotype)
+  )
 
 # Loop over phenotypes to create figures
 symp_figs <- map(
-  c("Cardiopulmonary", "Neuropsychiatric", "Multisystem"), function(p) {
+  c("Cardiopulmonary", "Neuropsychiatric", "Multisystem"),
+  function(p) {
     f <- symp_data |>
       filter(phenotype == p) |>
       mutate(symptom = fct_reorder(symptom, p_symp)) |>
@@ -338,24 +389,29 @@ symp_figs <- map(
       geom_point(size = 2.5, color = "gray") +
       scale_x_continuous(
         limits = c(0, 100),
-        breaks = seq(0, 100, 20)) +
-      facet_wrap(~ phenotype) +
+        breaks = seq(0, 100, 20)
+      ) +
+      facet_wrap(~phenotype) +
       labs(x = "Percent of Cases") +
       theme(axis.title.y = element_blank())
-    if(p == "Multisystem") {
+    if (p == "Multisystem") {
       f <- f + theme(axis.text.y = element_text(size = 7.5))
     } else {
       f <- f + theme(axis.text.y = element_text(size = 9))
     }
-    f })
+    f
+  }
+)
 
 # Combine into panel fig
 left_col <- (symp_figs[[1]] / symp_figs[[2]]) +
   plot_layout(axes = "collect")
-symp_fig <- left_col | symp_figs[[3]] +
-  plot_layout(
-    axes = "collect")
-  
+symp_fig <- left_col |
+  symp_figs[[3]] +
+    plot_layout(
+      axes = "collect"
+    )
+
 # Write to file & insert into word doc
 ggsave(
   filename = here("figures/symp_fig.tiff"),
@@ -365,7 +421,8 @@ ggsave(
   dpi = 600,
   width = 6.5,
   height = 6,
-  compression = "lzw")
+  compression = "lzw"
+)
 knitr::include_graphics(here("figures/symp_fig.tiff"))
 
 # Compute percent of multisymptom cases that have at least one digestive code
@@ -375,8 +432,14 @@ digestive_codes <- meta |>
 percent_dig_multi <- multi_symp |>
   mutate(is_digestive = if_else(ICD10Code %in% digestive_codes, 1L, 0L)) |>
   group_by(patient) |>
-  summarize(has_digestive = if_else(
-    sum(is_digestive, na.rm = TRUE) > 0, 100L, 0L), .groups = "drop") |>
+  summarize(
+    has_digestive = if_else(
+      sum(is_digestive, na.rm = TRUE) > 0,
+      100L,
+      0L
+    ),
+    .groups = "drop"
+  ) |>
   pull(has_digestive) |>
   mean() |>
   round(digits = 0)
@@ -388,8 +451,14 @@ sleep_codes <- meta |>
 percent_sleep_multi <- multi_symp |>
   mutate(is_sleep = if_else(ICD10Code %in% sleep_codes, 1L, 0L)) |>
   group_by(patient) |>
-  summarize(has_sleep = if_else(
-    sum(is_sleep, na.rm = TRUE) > 0, 100L, 0L), .groups = "drop") |>
+  summarize(
+    has_sleep = if_else(
+      sum(is_sleep, na.rm = TRUE) > 0,
+      100L,
+      0L
+    ),
+    .groups = "drop"
+  ) |>
   pull(has_sleep) |>
   mean() |>
   round(digits = 0)
@@ -397,7 +466,9 @@ percent_sleep_multi <- multi_symp |>
 # Fx to format numbers to enough digits
 format_number <- function(x) {
   sapply(x, function(val) {
-    if (is.na(val)) return(NA_character)
+    if (is.na(val)) {
+      return(NA_character)
+    }
     if (abs(val) >= 0.01) {
       formatC(val, format = "f", digits = 2)
     } else {
@@ -408,38 +479,68 @@ format_number <- function(x) {
 
 # Table of adjusted risk differences across all models. This will feed into the risk difference figure, printing esimates & CIS, and supplementary table.
 rd_dat <- bind_rows(rd$rd1, rd$rd2, rd$rd3) |>
-  select(model, term, contrast, outcome = group, estimate, p.value, conf.low,
-         conf.high) |>
+  select(
+    model,
+    term,
+    contrast,
+    outcome = group,
+    estimate,
+    p.value,
+    conf.low,
+    conf.high
+  ) |>
 
   # Code for p < 0.05, convert to %
   mutate(
     statsig = if_else(p.value < 0.05, "yes", "no"),
     across(c(estimate, conf.low, conf.high), ~ . * 100),
-    
+
     # Clean up labels & set ordering
     term = if_else(term == "clade", "variant", term),
     term_contrast = paste0(str_to_title(term), ": ", contrast),
-    term_contrast = if_else(str_detect(term_contrast, "Svi"),
-                            "SVI: Low - High", term_contrast),
+    term_contrast = if_else(
+      str_detect(term_contrast, "Svi"),
+      "SVI: Low - High",
+      term_contrast
+    ),
     term_contrast = fct_relevel(
-      term_contrast, "SVI: Low - High", "Rurality: Low - High", "Sex: M - F",
-      "Age: +1", "Variant: Omicron 2022+ - Delta",
-      "Variant: Pre-Delta - Omicron 2022+"),
+      term_contrast,
+      "SVI: Low - High",
+      "Rurality: Low - High",
+      "Sex: M - F",
+      "Age: +1",
+      "Variant: Omicron 2022+ - Delta",
+      "Variant: Pre-Delta - Omicron 2022+"
+    ),
     outcome = fct_relevel(
-      outcome, "Cardiopulmonary", "Neuropsychiatric", "Multisystem"),
+      outcome,
+      "Cardiopulmonary",
+      "Neuropsychiatric",
+      "Multisystem"
+    ),
     model = fct_relevel(model, "Base + Health + Treatment", "Base + Health"),
-    
+
     est_ci = paste0(
-      format_number(estimate), " [",
-      format_number(conf.low), ", ",
-      format_number(conf.high), "]"))
+      format_number(estimate),
+      " [",
+      format_number(conf.low),
+      ", ",
+      format_number(conf.high),
+      "]"
+    )
+  )
 
 # Compute minimum p-value among all non-statsig variant contrats
 min_variant_p <- rd_dat |>
   filter(
     term == "variant",
-    !contrast %in% c("Pre-Delta - Early Omicron", "Pre-Delta - Omicron 2022+",
-                     "Omicron 2022+ - Delta")) |>
+    !contrast %in%
+      c(
+        "Pre-Delta - Early Omicron",
+        "Pre-Delta - Omicron 2022+",
+        "Omicron 2022+ - Delta"
+      )
+  ) |>
   pull(p.value) |>
   min() |>
   round(digits = 2)
@@ -448,7 +549,8 @@ min_variant_p <- rd_dat |>
 min_omicron_p <- rd_dat |>
   filter(
     term == "variant",
-    contrast == "Omicron 2022+ - Early Omicron") |>
+    contrast == "Omicron 2022+ - Early Omicron"
+  ) |>
   pull(p.value) |>
   min() |>
   round(digits = 2)
@@ -458,10 +560,10 @@ rurality_p <- rd_dat |>
   filter(
     term == "rurality",
     outcome == "Recovered",
-    model == "Base + Health + Treatment") |>
+    model == "Base + Health + Treatment"
+  ) |>
   pull(p.value) |>
   round(digits = 3)
-
 ```
 
 ## Modeling
@@ -477,34 +579,48 @@ Adjusted risk differences for all target contrasts are given in Supplementary @t
 ```{r}
 #| label: fig-rd
 #| fig-cap: "Adjusted risk differences with 95% CIs. Estimates are grouped into panels representing the four outcomes: cardiopulmonary, neuropsychiatric, multisystem, and recovered. Each panel illustrates estimates for the *y*-axis contrasts from the three models. Filled circles represent estimates in which the CI does not include zero. Variant contrasts with no filled circles (e.g., pre-Delta - Delta) are omitted to save space."
-
 # Risk difference figure
 pd = position_dodge(0.7)
 rd_fig <- rd_dat |>
-    
+
   # Contrasts we want to focus on
   filter(
-    term %in% c("age", "sex", "rurality", "svi") |
-    (term == "variant" & contrast %in%
-       c("Pre-Delta - Early Omicron", "Pre-Delta - Omicron 2022+"))) |>
-  ggplot(aes(x = estimate, y = term_contrast, shape = statsig, color = model,
-             group = model)) +
+    term %in%
+      c("age", "sex", "rurality", "svi") |
+      (term == "variant" &
+        contrast %in%
+          c("Pre-Delta - Early Omicron", "Pre-Delta - Omicron 2022+"))
+  ) |>
+  ggplot(aes(
+    x = estimate,
+    y = term_contrast,
+    shape = statsig,
+    color = model,
+    group = model
+  )) +
   geom_vline(xintercept = 0, linetype = "dashed", linewidth = 0.2) +
   geom_linerange(
     aes(xmin = conf.low, xmax = conf.high),
-    position = pd) +
+    position = pd
+  ) +
   geom_point(position = pd, size = 2.5) +
   scale_color_okabe_ito() +
   scale_shape_manual(values = c("no" = 1, "yes" = 16)) +
-  facet_wrap(~ outcome) +
+  facet_wrap(~outcome) +
   guides(shape = "none") +
-  labs(x = "Adjusted Risk Difference",
-       color = "Model") +
-  theme(axis.title.y = element_blank(),
-        legend.position = c(0.4, 1.1),
-        plot.margin = margin(t = 36, b = 10, r = 10, l = 10)) +
-  guides(color = guide_legend(
-    title = "Model", reverse = TRUE, direction = "horizontal"))
+  labs(x = "Adjusted Risk Difference", color = "Model") +
+  theme(
+    axis.title.y = element_blank(),
+    legend.position = c(0.4, 1.1),
+    plot.margin = margin(t = 36, b = 10, r = 10, l = 10)
+  ) +
+  guides(
+    color = guide_legend(
+      title = "Model",
+      reverse = TRUE,
+      direction = "horizontal"
+    )
+  )
 
 # Write to file & insert into word doc
 ggsave(
@@ -515,9 +631,9 @@ ggsave(
   dpi = 600,
   width = 6.5,
   height = 7,
-  compression = "lzw")
+  compression = "lzw"
+)
 knitr::include_graphics(here("figures/rd_fig.tiff"))
-
 ```
 
 Results for the early Omicron and Omicron 2022+ variants were nearly identical. In direct comparisons there was no evidence that the two groups differed from one another (all *p* \> `r min_omicron_p`), and both patterned similarly relative to pre-Delta in that they were associated with less recovery and more multisystem long COVID. Differences with pre-Delta were robust to model specification for early Omicron on both the recovered (B: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Recovered", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Recovered", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Recovered", model == "Base + Health + Treatment") |> pull(est_ci)`) and multisystem outcomes (B: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Multisystem", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Multisystem", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Early Omicron", outcome == "Multisystem", model == "Base + Health + Treatment") |> pull(est_ci)`). For Omicron 2022+, differences with pre-Delta were robust across all three models on the multisystem outcome (B: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Multisystem", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Multisystem", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Multisystem", model == "Base + Health + Treatment") |> pull(est_ci)`), and all but the treatment model on the recovered outcome (B: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Recovered", model == "Base") |> pull(est_ci)`; BH: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Recovered", model == "Base + Health") |> pull(est_ci)`; BHT: `r rd_dat |> filter(contrast == "Pre-Delta - Omicron 2022+", outcome == "Recovered", model == "Base + Health + Treatment") |> pull(est_ci)`). No other contrasts involving viral variant were significant (all *p* \> `r min_variant_p`).
@@ -533,7 +649,6 @@ Recovery was marginally higher in the low versus high rurality groups after cont
 ```{r}
 #| label: fig-pred
 #| fig-cap: Adjusted outcome prevalences in the Base + Health + Treatment model by viral variant (A), age (B), sex (C), rurality (D), and SVI (E). Error bars and shading represent standard errors.
-
 # Clade figure
 pd <- position_dodge(0.4)
 clade_fig <- clade_pred |>
@@ -541,33 +656,45 @@ clade_fig <- clade_pred |>
   geom_line(position = pd) +
   geom_linerange(
     aes(ymin = estimate - std.error, ymax = estimate + std.error),
-    position = pd, linewidth = 0.4) +
+    position = pd,
+    linewidth = 0.4
+  ) +
   geom_point(position = pd) +
   scale_y_continuous(breaks = seq(0, 100, 10)) +
   scale_color_okabe_ito(order = c(1:3, 7)) +
-  labs(x = "Variant",
-       y = "Prevalence (%)",
-       color = "Outcome") +
+  labs(x = "Variant", y = "Prevalence (%)", color = "Outcome") +
   theme(
-    axis.text.x = element_text(angle = 15, hjust = 1)) +
+    axis.text.x = element_text(angle = 15, hjust = 1)
+  ) +
   guides(color = "none")
 
 # Age figure
 age_fig <- age_pred |>
-  mutate(group = fct_relevel(group,
-    "Cardiopulmonary", "Neuropsychiatric", "Multisystem")) |>
-  ggplot(aes(x = age_unscaled, y = estimate, group = group, color = group,
-             fill = group)) +
+  mutate(
+    group = fct_relevel(
+      group,
+      "Cardiopulmonary",
+      "Neuropsychiatric",
+      "Multisystem"
+    )
+  ) |>
+  ggplot(aes(
+    x = age_unscaled,
+    y = estimate,
+    group = group,
+    color = group,
+    fill = group
+  )) +
   geom_line() +
-  geom_ribbon(aes(ymin = estimate - std.error, ymax = estimate + std.error),
-              color = NA,
-              alpha = 0.2) +
+  geom_ribbon(
+    aes(ymin = estimate - std.error, ymax = estimate + std.error),
+    color = NA,
+    alpha = 0.2
+  ) +
   scale_y_continuous(breaks = seq(0, 100, 10)) +
   scale_color_okabe_ito(order = c(1:3, 7)) +
   scale_fill_okabe_ito(order = c(1:3, 7)) +
-  labs(x = "Age (Years)",
-       color = "Outcome",
-       fill = "Outcome") +
+  labs(x = "Age (Years)", color = "Outcome", fill = "Outcome") +
   guides(fill = "none") +
   theme(axis.title.y = element_blank())
 
@@ -577,13 +704,13 @@ sex_fig <- sex_pred |>
   geom_line(position = pd) +
   geom_linerange(
     aes(ymin = estimate - std.error, ymax = estimate + std.error),
-    position = pd, linewidth = 0.4) +
+    position = pd,
+    linewidth = 0.4
+  ) +
   geom_point(position = pd) +
   scale_y_continuous(breaks = seq(0, 100, 10)) +
   scale_color_okabe_ito(order = c(1:3, 7)) +
-  labs(x = "Sex",
-       y = "Prevalence (%)",
-       color = "Outcome") +
+  labs(x = "Sex", y = "Prevalence (%)", color = "Outcome") +
   guides(color = "none")
 
 # Rurality figure
@@ -592,12 +719,13 @@ rural_fig <- rural_pred |>
   geom_line(position = pd) +
   geom_linerange(
     aes(ymin = estimate - std.error, ymax = estimate + std.error),
-    position = pd, linewidth = 0.4) +
+    position = pd,
+    linewidth = 0.4
+  ) +
   geom_point(position = pd) +
   scale_y_continuous(breaks = seq(0, 100, 10)) +
   scale_color_okabe_ito(order = c(1:3, 7)) +
-  labs(x = "Rurality",
-       color = "Outcome") +
+  labs(x = "Rurality", color = "Outcome") +
   guides(color = "none") +
   theme(axis.title.y = element_blank())
 
@@ -607,12 +735,13 @@ svi_fig <- svi_pred |>
   geom_line(position = pd) +
   geom_linerange(
     aes(ymin = estimate - std.error, ymax = estimate + std.error),
-    position = pd, linewidth = 0.4) +
+    position = pd,
+    linewidth = 0.4
+  ) +
   geom_point(position = pd) +
   scale_y_continuous(breaks = seq(0, 100, 10)) +
   scale_color_okabe_ito(order = c(1:3, 7)) +
-  labs(x = "SVI",
-       color = "Outcome") +
+  labs(x = "SVI", color = "Outcome") +
   guides(color = "none") +
   theme(axis.title.y = element_blank())
 
@@ -626,7 +755,8 @@ pred_fig <- (leg / (top_row / bottom_row)) +
   plot_layout(
     guides = "collect",
     axes = "collect",
-    heights = c(1, 12)) +
+    heights = c(1, 12)
+  ) +
   plot_annotation(tag_levels = "A") &
   theme(legend.position = "top")
 
@@ -639,9 +769,9 @@ ggsave(
   dpi = 600,
   width = 6.5,
   height = 6,
-  compression = "lzw")
+  compression = "lzw"
+)
 knitr::include_graphics(here("figures/pred_fig.tiff"))
-
 ```
 
 # Discussion
@@ -719,17 +849,15 @@ Variant sequencing was performed at the BVAMC SeqCURE (Sequencing Collaborations
 
 {{< pagebreak >}}
 
-```{r icd}
+```{r}
 #| label: tbl-icd
 #| tbl-cap: ICD-10 codes used to define Long COVID phenotypes. Codes are categorized by symptom and the primary organ system affected.
-
 # Long covid codes & symptoms by system
 icd10 |>
   flextable() |>
   font(fontname = "Times New Roman", part = "all") |>
   fontsize(size = 10, part = "all") |>
   set_table_properties(layout = "autofit")
-
 ```
 
 {{< pagebreak >}}
@@ -737,23 +865,32 @@ icd10 |>
 ```{r}
 #| label: tbl-rd
 #| tbl-cap: "Risk difference estimates and 95% CIs by term, contrast, and outcome for four models: Unadjusted, Base, Base + Health, and Base + Health + Treatment."
-
 # Table of unadjusted risk differences
 unadj_rd <- read_feather(here(
-  "data/unadj_rd.feather")) |>
+  "data/unadj_rd.feather"
+)) |>
   mutate(
     across(where(is.numeric), ~ format_number(.)),
     est_ci = paste0(Estimate, " [", conf.low, ", ", conf.high, "]"),
-    model = "Unadjusted")|>
+    model = "Unadjusted"
+  ) |>
   select(Term, Contrast, Outcome, model, est_ci)
 
 # rbind unadjusted & adjusted risk differences & pivot wide
 rd_wide <- bind_rows(
   unadj_rd,
   rd_dat |>
-    select(Term = term, Contrast = contrast, Outcome = outcome, model, est_ci) |>
+    select(
+      Term = term,
+      Contrast = contrast,
+      Outcome = outcome,
+      model,
+      est_ci
+    ) |>
     mutate(
-      Term = str_to_title(Term))) |>
+      Term = str_to_title(Term)
+    )
+) |>
   mutate(Term = if_else(Term == "Svi", "SVI", Term)) |>
   pivot_wider(names_from = model, values_from = est_ci) |>
   arrange(Term, Contrast, Outcome)
@@ -766,5 +903,4 @@ rd_wide |>
   set_table_properties(layout = "autofit") |>
   add_header_row(values = c("", "Model"), colwidths = c(3, 4)) %>%
   align(align = "center", part = "header")
-
 ```
